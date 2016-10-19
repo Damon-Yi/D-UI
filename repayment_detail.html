@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>还款计划详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/iscroll.css">
+    <script type="text/javascript" src="js/public.js"></script>
+    <script type="text/javascript" src="js/zepto.js"></script>
+    <script type="text/javascript" src="js/touch.js"></script>
+    <script type="text/javascript" src="js/iscroll.js"></script>
+    <style>
+        .cont{background-color: #eaeaea;width:100%;position: fixed;top:0;bottom:0.96rem;z-index: 4;-webkit-backface-visibility: hidden;backface-visibility: hidden;-webkit-perspective: 1000;perspective: 1000;-webkit-transform-style: preserve-3d;-webkit-transition-duration: 400ms;}
+        .cont>div{position: absolute;z-index: 1;-webkit-tap-highlight-color: rgba(0,0,0,0);width: 100%;-webkit-transform: translateZ(0);transform: translateZ(0);-webkit-touch-callout: none;-webkit-user-select: none;user-select: none;-webkit-text-size-adjust: none;text-size-adjust: none;}
+
+        footer{height:0.96rem;background-color: #f5f5f5;width:100%;position: fixed;bottom:0;z-index: 4;font-size:0.18rem;text-align: center;border-top:1px solid #dadada;color: #666;}
+        footer>div{float: left;width: 33.33%;}
+        footer>div.on{color: #0aaefd;}
+        footer .img{width:0.48rem;height: 0.48rem;display: block;margin: 0.1rem auto 0.04rem;}
+        footer>div .home{background: url(images/bottom_1.png) no-repeat center center;background-size:contain;}
+        footer>div.on .home{background: url(images/bottom_1.png) no-repeat center center;background-size:contain;}
+        footer>div .payment{background: url(images/bottom_2.png) no-repeat center center;background-size:contain;}
+        footer>div.on .payment{background: url(images/bottom_2.png) no-repeat center center;background-size:contain;}
+        footer>div .my{background: url(images/bottom_3.png) no-repeat center center;background-size:contain;}
+        footer>div.on .my{background: url(images/bottom_3.png) no-repeat center center;background-size:contain;}
+
+        .p_header{position: relative;background-color: #fff;height: 0.8rem;padding: 0 0.2rem;font-size: 0.24rem;color: #808080;}
+        .p_header .p_line{position: absolute;height: 1px;background-color:#eaeaea;width:6rem;top:0.4rem;left: 0.2rem; }
+        .p_header .p_h_cont{position: absolute;width: 2.24rem;height: 0.34rem;line-height: 0.34rem;background-color: #fff;top:0.4rem;left: 50%;margin: -0.17rem 0 0 -1.12rem;text-align:center;}
+        .p_header .p_h_cont .p_done{color: #0aaefd;}
+        .p_header .p_h_cont .p_un_done{color: #ff9900;}
+
+        .p_table{background-color: #fff;font-size: 0.24rem;color: #808080;margin: 0.2rem;padding: 0.1rem 0 0 0;}
+        .p_table table{width:5.4rem;text-align: center;margin: 0 auto;}
+        .p_table table tr{}
+        .p_table table th{padding: 0.16rem 0;}
+        .p_table table td{padding: 0.18rem 0;border-top: 1px solid #dadada;}
+        .p_table table td:first-child{text-align:left;padding: 0 0 0 0.06rem;}
+        .p_table table tr.p_wait{color: #202020;}
+        .p_table table tr.p_wait td:last-child{color: #ff9900;}
+    </style>
+    <script type="text/javascript">
+        function loaded () {
+            var tuwenScroller = new IScroll('.cont', {
+                probeType: 3,
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true
+            });
+        }
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    </script>
+</head>
+<body onload="loaded()">
+    <article class="cont">
+        <div>
+            <div class="p_header">
+                <div class="p_line"></div>
+                <div class="p_h_cont">已还<span class="p_done">6</span>期，待还<span class="p_un_done">12</span>期</div>
+            </div>
+            <div class="p_table">
+                <table>
+                    <thead>
+                        <th>期数</th>
+                        <th>还款日期</th>
+                        <th>本期应还总额(元)</th>
+                        <th>状态</th>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>2015/05/12</td><td>1200.65</td><td>已还清</td></tr>
+                        <tr><td>2</td><td>2015/05/12</td><td>1200.65</td><td>已还清</td></tr>
+                        <tr><td>3</td><td>2015/05/12</td><td>1200.65</td><td>已还清</td></tr>
+                        <tr><td>4</td><td>2015/05/12</td><td>1200.65</td><td>已还清</td></tr>
+                        <tr><td>5</td><td>2015/05/12</td><td>1200.65</td><td>已还清</td></tr>
+                        <tr class="p_wait"><td>6</td><td>2015/05/12</td><td>1200.65</td><td>待还款</td></tr>
+                        <tr class="p_wait"><td>7</td><td>2015/05/12</td><td>1200.65</td><td>待还款</td></tr>
+                        <tr><td>1</td><td>2015/05/12</td><td>1200.65</td><td>已还清</td></tr>
+                        <tr><td>2</td><td>2015/05/12</td><td>1200.65</td><td>已还清</td></tr>
+                        <tr><td>3</td><td>2015/05/12</td><td>1200.65</td><td>已还清</td></tr>
+                        <tr><td>4</td><td>2015/05/12</td><td>1200.65</td><td>已还清</td></tr>
+                        <tr><td>5</td><td>2015/05/12</td><td>1200.65</td><td>已还清</td></tr>
+                        <tr class="p_wait"><td>6</td><td>2015/05/12</td><td>1200.65</td><td>待还款</td></tr>
+                        <tr class="p_wait"><td>7</td><td>2015/05/12</td><td>1200.65</td><td>待还款</td></tr>
+                        <tr><td>1</td><td>2015/05/12</td><td>1200.65</td><td>已还清</td></tr>
+                        <tr><td>2</td><td>2015/05/12</td><td>1200.65</td><td>已还清</td></tr>
+                        <tr><td>3</td><td>2015/05/12</td><td>1200.65</td><td>已还清</td></tr>
+                        <tr><td>4</td><td>2015/05/12</td><td>1200.65</td><td>已还清</td></tr>
+                        <tr><td>5</td><td>2015/05/12</td><td>1200.65</td><td>已还清</td></tr>
+                        <tr class="p_wait"><td>6</td><td>2015/05/12</td><td>1200.65</td><td>待还款</td></tr>
+                        <tr class="p_wait"><td>7</td><td>2015/05/12</td><td>1200.65</td><td>待还款</td></tr>
+                        <tr><td>1</td><td>2015/05/12</td><td>1200.65</td><td>已还清</td></tr>
+                        <tr><td>2</td><td>2015/05/12</td><td>1200.65</td><td>已还清</td></tr>
+                        <tr><td>3</td><td>2015/05/12</td><td>1200.65</td><td>已还清</td></tr>
+                        <tr><td>4</td><td>2015/05/12</td><td>1200.65</td><td>已还清</td></tr>
+                        <tr><td>5</td><td>2015/05/12</td><td>1200.65</td><td>已还清</td></tr>
+                        <tr class="p_wait"><td>6</td><td>2015/05/12</td><td>1200.65</td><td>待还款</td></tr>
+                        <tr class="p_wait"><td>7</td><td>2015/05/12</td><td>1200.65</td><td>待还款</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </article>
+    <footer>
+        <div><span class="img home"></span><span>首页</span></div>
+        <div><span class="img payment"></span><span>借款</span></div>
+        <div class="on"><span class="img my"></span><span>我的</span></div>
+    </footer>
+    <script>
+    </script>
+</body>
+</html>

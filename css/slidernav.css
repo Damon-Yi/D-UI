@@ -1,0 +1,50 @@
+.tongxunlu{position: fixed;top:0;bottom:0;left:0;right:0;overflow-y: auto;overflow-x: hidden;z-index: 12;display: none;}
+.tongxunlu-show{display: block;}
+.tongxunlu .slider{background-color: #fff;width:100%;position: fixed;top:44px;bottom:0;z-index: 1;-webkit-backface-visibility: hidden;backface-visibility: hidden;-webkit-perspective: 1000;perspective: 1000;-webkit-transform-style: preserve-3d;-webkit-transition-duration: 400ms;}
+.tongxunlu ul{list-style: none; }
+.tongxunlu .slider-content {}
+.tongxunlu .slider-content li {width: 100%; }
+.tongxunlu .slider-content ul li a { padding: 8px 10px; display: block; text-transform: capitalize;color: #000;position: relative;}
+.tongxunlu .slider-content ul li a:after{content: " ";position: absolute;left:10px;bottom: 0;width: 100%;height: 1px;border-bottom: 1px solid #D9D9D9;color: #D9D9D9;-webkit-transform-origin: 0 100%;transform-origin: 0 100%;-webkit-transform: scaleY(0.5);transform: scaleY(0.5);}
+.tongxunlu .slider-content ul li:last-child a:after{display: none;}
+.tongxunlu .slider-content ul li a:hover { background: #f3faff; border-color: #d5ebf9; }
+.tongxunlu .slider-content .title { padding: 5px 0; text-indent: 10px; background: #f2f2f2; color: #000; width: 100%;display: block; font-weight: bold; text-transform: uppercase; }
+.tongxunlu .slider-content .selected .title { background: #f2f2f2; }
+.tongxunlu .slider-nav {position: fixed; right: 0; top:44px; background: #fff; min-height: 250px;height:100%;width: 24px;z-index:4;}
+.tongxunlu .slider-nav ul {padding: 5px 0;position: absolute;top: 50%;right: 0;transform: translateY(-50%);}
+.tongxunlu .slider-nav li a {padding: 3px 5px; line-height: 13px; text-align: center; color: #007aff; font-weight: bold; display: block; text-transform: uppercase; cursor: pointer; }
+.tongxunlu .slider #debug { position: absolute; bottom: 0; left: 0; padding: 5px; background: #000; color: #fff; }
+.tongxunlu .slider .arrow { font-size: 0px; line-height: 0%; width: 0px; border-bottom: 8px solid #fff; border-left: 5px solid #333; border-right: 5px solid #333; position: relative; top: 5px; }
+.tongxunlu .slider .down { border-bottom: none; border-top: 8px solid #fff; top: 15px; }
+.tongxunlu .slider .slide-up,.tongxunlu .slider .slide-down { height: 20px; background: #333; text-align: center; cursor: pointer; float: right; width: 100%; position: relative; }
+
+
+.weui_search_bar {position: fixed;top:0;padding: 8px 10px;display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;box-sizing: border-box;background-color: #c9c9ce;z-index:6;font-size: 14px;width: 100%;}
+.weui_search_bar:before {content: " ";position: absolute;left: 0;top: 0;width: 100%;height: 1px;border-top: 1px solid #C7C7C7;color: #C7C7C7;-webkit-transform-origin: 0 0;transform-origin: 0 0;-webkit-transform: scaleY(0.5);transform: scaleY(0.5);}
+.weui_search_bar:after {content: " ";position: absolute;left: 0;bottom: 0;width: 100%;height: 1px;border-bottom: 1px solid #C7C7C7;color: #C7C7C7;-webkit-transform-origin: 0 100%;transform-origin: 0 100%;-webkit-transform: scaleY(0.5);transform: scaleY(0.5);}
+.weui_search_bar.weui_search_focusing .weui_search_cancel {display: block;}
+.weui_search_bar.weui_search_focusing .weui_search_text {display: none !important;}
+.weui_search_outer {position: relative;-webkit-box-flex: 1;-webkit-flex: auto;-ms-flex: auto;flex: auto;background-color: #EFEFF4;border-radius: 10px;}
+.weui_search_outer:after {content: '';position: absolute;left: 0;top: 0;width: 200%;height: 200%;-webkit-transform: scale(0.5);transform: scale(0.5);-webkit-transform-origin: 0 0;transform-origin: 0 0;border-radius: 10px;border: 1px solid #E6E6EA;box-sizing: border-box;background: #FFFFFF;}
+.weui_search_inner {position: relative;padding-left: 30px;padding-right: 30px;height: 100%;width: 100%;box-sizing: border-box;z-index: 1;}
+.weui_search_inner .weui_search_input {padding: 4px 0;width: 100%;height: 1.42857143em;border: 0;font-size: 14px;line-height: 1.42857143em;box-sizing: content-box;background: transparent;}
+.weui_search_inner .weui_search_input:focus {outline: none;}
+.weui_search_inner .weui_icon_search {position: absolute;left: 10px;top: -2px;line-height: 28px;}
+.weui_search_inner .weui_icon_clear {position: absolute;top: -2px;right: 0;padding: 0 10px;line-height: 28px;}
+.weui_search_text {position: absolute;top: 1px;right: 1px;bottom: 1px;left: 1px;z-index: 2;border-radius: 3px;text-align: center;color: #9B9B9B;background: #FFFFFF;}
+.weui_search_text span {display: inline-block;font-size: 14px;vertical-align: middle;line-height: 26px;}
+.weui_search_text .weui_icon_search {margin-right: 5px;}
+.weui_search_cancel {display: none;margin-left: 10px;line-height: 28px;white-space: nowrap;color: #007aff;}
+.weui_search_input:not(:valid) ~ .weui_icon_clear {display: none;}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {display: none;}
+
+.search-result{background-color: #fff;width:100%;position: fixed;top:44px;bottom:0;z-index: 5;-webkit-backface-visibility: hidden;backface-visibility: hidden;-webkit-perspective: 1000;perspective: 1000;-webkit-transform-style: preserve-3d;-webkit-transition-duration: 400ms;display: none;}
+.search-result-show{display: block;}
+.search-result ul li a { padding: 8px 10px; display: block; text-transform: capitalize;color: #000;position: relative;}
+.search-result ul li a:after{content: " ";position: absolute;left:10px;bottom: 0;width: 100%;height: 1px;border-bottom: 1px solid #D9D9D9;color: #D9D9D9;-webkit-transform-origin: 0 100%;transform-origin: 0 100%;-webkit-transform: scaleY(0.5);transform: scaleY(0.5);}
+.search-result ul li:last-child a:after{display: none;}
+.back-btn{width: 28px;height: 28px;position: relative;}
+.back-btn:after {content: " ";display: inline-block;-webkit-transform: rotate(45deg);transform: rotate(45deg);height: 6px;width: 6px;border-width:0 0 2px 2px;border-color: #fff;border-style: solid;position: relative;top: -2px;position: absolute;top: 50%;right: 12px;margin-top: -4px;}

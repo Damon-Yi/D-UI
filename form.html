@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>员工</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" href="css/weui.min.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/weui-valid.css">
+    <link rel="stylesheet" href="plugin/layer/need/layer.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="plugin/layer/layer.js"></script>
+    <script type="text/javascript" src="js/public.js?v=20160720"></script>
+</head>
+<body ontouchstart>
+    <div class="bd">
+        <div class="weui_cells_title">请填写企业资质</div>
+        <div class="weui_cells weui_cells_form">
+            <div class="weui_cell weui_cell_select">
+                <div class="weui_cell_hd"><label for="" class="weui_label">企业资质</label></div>
+                <div class="weui_cell_bd weui_cell_primary weui-select-wrap">
+                    <select class="weui_select" name="select2">
+                        <option value="">请选择</option>
+                        <option value="1">优秀</option>
+                        <option value="2">良好</option>
+                        <option value="3">一般</option>
+                    </select>
+                </div>
+            </div>
+            <div class="weui_cell weui_cell_select">
+                <div class="weui_cell_hd"><label for="" class="weui_label">担保情况</label></div>
+                <div class="weui_cell_bd weui_cell_primary weui-select-wrap">
+                    <select class="weui_select" name="select2">
+                        <option value="">请选择</option>
+                        <option value="1">企业为员工提供担保责任</option>
+                        <option value="2">企业为员工提供风险保证金</option>
+                        <option value="3">员工互保</option>
+                        <option value="4">无</option>
+                    </select>
+                </div>
+            </div>
+            <div class="weui_cell weui_cells_checkbox">
+                <label for="" class="weui_cell weui_label">担保情况</label>
+                <div class="weui_cell_bd">
+                    <label class="weui_cell weui_check_label" for="s11">
+                        <div class="weui_cell_hd">
+                            <input type="radio" name="radio1" class="weui_check" id="s11">
+                            <i class="weui_icon_checked"></i>
+                        </div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>是</p>
+                        </div>
+                    </label>
+                </div>
+                <div class="weui_cell_bd">
+                    <label class="weui_cell weui_check_label" for="s12">
+                        <div class="weui_cell_hd">
+                            <input type="radio" name="radio1" class="weui_check" id="s12" checked="checked">
+                            <i class="weui_icon_checked"></i>
+                        </div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>否</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="weui_cells_title">请填写员工信息</div>
+        <div class="weui_cells weui_cells_form">
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">姓名</label></div>
+                <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+                    <input class="weui_input" type="tel" title="" placeholder="请输入年龄"/>
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">身份证</label></div>
+                <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+                    <input class="weui_input" type="text" id="idcard" placeholder="填写申请人身份证号"/>
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">年龄</label></div>
+                <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+                    <input class="weui_input" type="tel" title="" placeholder="请输入年龄" pat="/^(1[8-9]|[2-4]\d{1}|5[0-5])$/" maxLen='2'/>
+                </div>
+                <div class="weui_cell_ft">岁</div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">借款金额</label></div>
+                <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+                    <input class="weui_input" type="tel" title="" placeholder="请填写借款金额" pat="/^([1-9]|[1-4][0-9]|50)$/" maxLen="2"/>
+                </div>
+                <div class="weui_cell_ft">万</div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">月收入</label></div>
+                <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+                    <input class="weui_input" type="tel" title="" placeholder="请输入月收入" pat="/^[1-9]\d{0,5}$/" maxLen="6"/>
+                </div>
+                <div class="weui_cell_ft">元</div>
+            </div>
+            <div class="weui_cell weui_cell_select">
+                <div class="weui_cell_hd"><label for="" class="weui_label">借款期数</label></div>
+                <div class="weui_cell_bd weui_cell_primary weui-select-wrap">
+                    <select class="weui_select" name="select2">
+                        <option value="">请选择</option>
+                        <option value="6">6个月</option>
+                        <option value="12">12个月</option>
+                        <option value="18">18个月</option>
+                        <option value="24">24个月</option>
+                        <option value="30">30个月</option>
+                        <option value="36">36个月</option>
+                        <option value="42">42个月</option>
+                        <option value="48">48个月</option>
+                        <option value="54">54个月</option>
+                        <option value="60">60个月</option>
+                    </select>
+                </div>
+            </div>
+            <div class="weui_cell weui_cell_select">
+                <div class="weui_cell_hd"><label for="" class="weui_label">住房信息</label></div>
+                <div class="weui_cell_bd weui_cell_primary weui-select-wrap">
+                    <select class="weui_select" name="select2">
+                        <option value="">请选择</option>
+                        <option value="1">无房</option>
+                        <option value="2">有房未结清，还款12期以下</option>
+                        <option value="3">有房未结清，还款12期以上</option>
+                        <option value="4">有房已结清</option>
+                    </select>
+                </div>
+            </div>
+            <div class="weui_cell weui_cell_select">
+                <div class="weui_cell_hd"><label for="" class="weui_label">户口所在地</label></div>
+                <div class="weui_cell_bd weui_cell_primary weui-select-wrap">
+                    <select class="weui_select" name="select2">
+                        <option value="">请选择</option>
+                        <option value="1">外地户口</option>
+                        <option value="2">本地户口</option>
+                    </select>
+                </div>
+            </div>
+            <div class="weui_cell weui_cell_select">
+                <div class="weui_cell_hd"><label for="" class="weui_label">信用卡信息</label></div>
+                <div class="weui_cell_bd weui_cell_primary weui-select-wrap">
+                    <select class="weui_select" name="select2">
+                        <option value="">请选择</option>
+                        <option value="1">有信用卡</option>
+                        <option value="2">无信用卡</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="weui_cells weui_cells_form">
+            <div class="weui_cell weui_cell_select">
+                <div class="weui_cell_hd"><label for="" class="weui_label">婚姻状况</label></div>
+                <div class="weui_cell_bd weui_cell_primary weui-select-wrap">
+                    <select class="weui_select" name="select2">
+                        <option value="">请选择</option>
+                        <option value="1">未婚</option>
+                        <option value="2">已婚</option>
+                    </select>
+                </div>
+            </div>
+            <div class="weui_cell weui_cell_select">
+                <div class="weui_cell_hd"><label for="" class="weui_label">公司职位</label></div>
+                <div class="weui_cell_bd weui_cell_primary weui-select-wrap">
+                    <select class="weui_select" name="select2">
+                        <option value="">请选择</option>
+                        <option value="1">普通员工</option>
+                        <option value="2">主管</option>
+                        <option value="2">经理</option>
+                        <option value="2">高级经理</option>
+                        <option value="2">总监</option>
+                        <option value="2">公司总经理</option>
+                    </select>
+                </div>
+            </div>
+            <div class="weui_cell weui_cell_select">
+                <div class="weui_cell_hd"><label for="" class="weui_label">入职时长</label></div>
+                <div class="weui_cell_bd weui_cell_primary weui-select-wrap">
+                    <select class="weui_select" name="select2">
+                        <option value="">请选择</option>
+                        <option value="1">少于1年</option>
+                        <option value="2">1年</option>
+                        <option value="2">2年</option>
+                        <option value="2">3年</option>
+                        <option value="2">4年</option>
+                        <option value="2">5年</option>
+                        <option value="2">超过5年</option>
+                    </select>
+                </div>
+            </div>
+            <div class="weui_cell weui_cell_select">
+                <div class="weui_cell_hd"><label for="" class="weui_label">劳动合同签署期数</label></div>
+                <div class="weui_cell_bd weui_cell_primary weui-select-wrap">
+                    <select class="weui_select" name="select2">
+                        <option value="">请选择</option>
+                        <option value="2">1年合同</option>
+                        <option value="2">2年合同</option>
+                        <option value="2">5年合同</option>
+                        <option value="2">永久合同</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="weui_cells_tips">员动力严格遵守个人隐私保密协议</div>
+        <div class="weui_btn_area">
+            <a class="weui_btn weui_btn_primary" href="javascript:" id="showTooltips">测算</a>
+        </div>
+    </div>
+    <script>
+        $(function (){
+
+            //weui 校验,初始化
+            var weui_valid_obj = weui_valid($('.weui-input-wrap>input,.weui_cell_bd>select'));       
+            //测算
+            $('#showTooltips').click(function (){
+                if(!weui_valid_obj.validResult()){
+                    return false;
+                }
+                console.log('post');
+                /*$.post('#',$('#reg').serialize(),function(data){
+                    if(data.error == 0){
+                        location.href = '';
+                        return false;
+                    }else{
+                        layer.open({
+                            content: data.msg,
+                            time: 2 
+                        });
+                        return false;
+                    }
+                },"json");*/
+            });
+        });
+    </script>
+</body>
+</html>

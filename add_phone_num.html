@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>分期购</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/iscroll.css">
+    <script type="text/javascript" src="js/public.js"></script>
+    <script type="text/javascript" src="js/zepto.js"></script>
+    <script type="text/javascript" src="js/touch.js"></script>
+    <style>
+        .cont{height:100%;background-color: #fff;width:100%;position: fixed;top:0;bottom:0;z-index: 4;-webkit-backface-visibility: hidden;backface-visibility: hidden;-webkit-perspective: 1000;perspective: 1000;-webkit-transform-style: preserve-3d;-webkit-transition-duration: 400ms;font-size:0.24rem;}
+        
+        .c_header{width: 100%;height: 0.8rem;line-height:0.8rem;background-color: #364c64;text-align: center;position: relative;color: #ecf0f1;font-size:0.36rem;}
+        .c_header>img{position: absolute;width: 0.25rem;height: 0.42rem;left:0.16rem;top:0.2rem;}
+
+        .c_form{width: 93.75%;margin: 0 auto;}
+        .c_form_td{height: 0.8rem;border-bottom:1px solid #ecf0f1;position: relative;}
+        .c_form_td>img{position: absolute;bottom:0.12rem;}
+        .c_form_td>input{position: absolute;bottom:0.12rem;left:0.7rem;font-size:0.28rem;}
+        .c_line1>img{width:0.37rem;height: 0.26rem;left: 0.12rem;}
+        .c_line2>img{width:0.29rem;height: 0.34rem;left: 0.2rem;}
+        .get_code_btn{position: absolute;bottom:0.1rem;right:0;width: 1.48rem;height: 0.6rem;line-height: 0.6rem;height: 0.6rem;background-color:#364c64;color:#fff;text-align: center;border-radius: 0.1rem;}
+        .c_form_btn{height: 0.9rem;line-height:0.9rem;background-color:#ff6f34;font-size: 0.32rem;color: #fff;text-align:center;border-radius: 0.1rem;margin: 0.6rem 0 0 0;}
+
+        .c_layer{position: fixed;top:0;left: 0;width: 100%;height: 100%;z-index: 4;display: none;}
+        .c_layer .c_mask{position: absolute;top:0;left: 0;width: 100%;height: 100%;background-color: rgba(0,0,0,.5);}
+        .c_layer .c_l_body{position: absolute;top:2.04rem;left: 50%;width: 4.4rem;margin: 0 0 0 -2.2rem;background-color:#fff;border-radius: 0.1rem;-webkit-animation: animDialog .3s ease-out;animation: animDialog .3s ease-out;}
+        @-webkit-keyframes animDialog {
+         from{-webkit-transform: scale(.05);transform: scale(.05);}
+         to{-webkit-transform: scale(1);transform: scale(1);}
+        }
+        @keyframes animDialog {
+          from{-webkit-transform: scale(.05);transform: scale(.05);}
+          to{-webkit-transform: scale(1);transform: scale(1);}
+        }
+        .c_layer .c_l_body .c_l_header{background-color:#efefef;width: 100%;height: 0.5rem;line-height: 0.5rem;font-size:0.28rem;color:#505050;border-radius: 0.1rem 0.1rem 0 0;}
+        .c_layer .c_l_body .c_l_header>span{margin: 0 0 0 0.12rem;}
+        .c_layer .c_l_body .c_l_header>img{position: absolute;width:0.53rem;height: 0.53rem;top:-0.2rem;right:-0.2rem; }
+        .c_layer .c_l_body .c_l_cont{text-align:center;font-size:0.28rem;padding: 0 0 0.12rem 0;}
+        .c_layer .c_l_body .c_l_cont>img{width: 0.6rem;height: 0.6rem;margin: 0.4rem 0 0 0;}
+        .c_layer .c_l_body .c_l_cont>p{margin: 0.12rem 0 0 0;}
+        .c_layer .c_l_body .c_l_cont .c_l_msg{color: #787878;}
+    </style>
+    <script type="text/javascript" src="js/iscroll.js"></script>
+    <script type="text/javascript">
+        function loaded () {
+            var tuwenScroller = new IScroll('.cont', {
+                probeType: 3,
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true
+            });
+        }
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    </script>
+</head>
+<body onload="loaded()">
+    <article class="cont">
+        <div>
+            <div class="c_header">
+                <img src="images/chevron.png" alt="">
+                <span>添加手机号</span>
+            </div>
+            <div class="c_form">
+                <div class="c_form_td c_line1"><img src="images/tel_icon.png" alt=""><input type="tel" placeholder="请输入新增手机号码"  class="c_form_phone"></div>
+                <div class="c_form_td c_line2"><img src="images/validate_code_icon.png" alt=""><input type="text" placeholder="请输入验证码"><span class="get_code_btn">获取验证码</span></div>
+                <div class="c_form_btn">添加以上手机号</div>
+            </div>
+        </div>
+    </article>
+    <div class="c_layer">
+        <div class="c_mask"></div>
+        <div class="c_l_body">
+            <div class="c_l_header">
+                <span>小贴士</span>
+                <img class="c_l_close_btn" src="images/layer_close.png" alt="">
+            </div>
+            <div class="c_l_cont">
+                <img src="images/layer_success.png" alt="">
+                <p>1233456661</p>
+                <p class="c_l_msg">已成功添加手机号</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            $('.c_form_btn').on('tap',function(){
+                $('.c_layer').css('display','block');
+            });
+            $('.c_layer .c_l_close_btn').on('tap',function(){
+                $('.c_layer').css('display','none');
+            });
+            /*绑定获取验证码事件*/
+            getCodefun($('.get_code_btn'),$('.c_form_phone'),10);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>还款计划详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/iscroll.css">
+    <script type="text/javascript" src="js/public.js"></script>
+    <script type="text/javascript" src="js/zepto.js"></script>
+    <script type="text/javascript" src="js/touch.js"></script>
+    <script type="text/javascript" src="js/iscroll.js"></script>
+    <style>
+		.cont{background-color: #eaeaea;width:100%;position: fixed;top:0;bottom:0.96rem;z-index: 4;-webkit-backface-visibility: hidden;backface-visibility: hidden;-webkit-perspective: 1000;perspective: 1000;-webkit-transform-style: preserve-3d;-webkit-transition-duration: 400ms;}
+		.cont>div{position: absolute;z-index: 1;-webkit-tap-highlight-color: rgba(0,0,0,0);width: 100%;-webkit-transform: translateZ(0);transform: translateZ(0);-webkit-touch-callout: none;-webkit-user-select: none;user-select: none;-webkit-text-size-adjust: none;text-size-adjust: none;}
+		
+    	footer{height:0.96rem;background-color: #f5f5f5;width:100%;position: fixed;bottom:0;z-index: 4;font-size:0.18rem;text-align: center;border-top:1px solid #dadada;color: #666;}
+    	footer>div{float: left;width: 33.33%;}
+    	footer>div.on{color: #0aaefd;}
+    	footer .img{width:0.48rem;height: 0.48rem;display: block;margin: 0.1rem auto 0.04rem;}
+    	footer>div .home{background: url(images/bottom_1.png) no-repeat center center;background-size:contain;}
+    	footer>div.on .home{background: url(images/bottom_1.png) no-repeat center center;background-size:contain;}
+    	footer>div .payment{background: url(images/bottom_2.png) no-repeat center center;background-size:contain;}
+    	footer>div.on .payment{background: url(images/bottom_2.png) no-repeat center center;background-size:contain;}
+    	footer>div .my{background: url(images/bottom_3.png) no-repeat center center;background-size:contain;}
+    	footer>div.on .my{background: url(images/bottom_3.png) no-repeat center center;background-size:contain;}
+
+		.r_item{font-size:0.32rem;text-align:center;background-color:#fff;margin: 0.2rem 0.2rem 0.28rem 0.2rem;position: relative;color: #808080;}
+		.r_item .r_title{height: 0.7rem;line-height: 0.7rem;border-top:2px solid #0aaefd;border-bottom:1px solid #dadada;color: #202020;}
+		.r_item .r_cont{padding: 0.28rem 0.18rem;}
+		.r_item .r_cont>div{display: inline-block;vertical-align: middle;}
+		.r_item .r_cont .data_item{}
+		.r_item .r_cont .data_item>p{padding: 0.16rem 0.32rem;}
+		.r_item .r_cont .data_item>p:first-child{font-size:0.24rem;}
+		.r_item .r_cont .d_col_1>p:last-child{color: #0aaefd;}
+		.r_item .r_cont .d_col_2>p:last-child{color: #ff9900;}
+		.r_item .r_cont .d_col_3>p:last-child{color: #202020;}
+		.r_item .r_cont .vertical_line{width: 1px;height: 0.7rem;background-color: #eaeaea;}
+		.r_item .r_cont .Chevron_right{}
+		.r_item .r_cont .Chevron_right>img{width: 0.14rem;height: 0.24rem;}
+		.r_item .r_bottom_dec{position: absolute;width: 100%;height: 0.16rem;background: url(images/bottom_oval.png) no-repeat center center;background-size:100% 100%;bottom:-0.08rem;left:0;}
+    </style>
+    <script type="text/javascript">
+        function loaded () {
+            var tuwenScroller = new IScroll('.cont', {
+                probeType: 3,
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true
+            });
+        }
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    </script>
+</head>
+<body onload="loaded()">
+    <article class="cont">
+        <div>
+            <div class="r_item">
+            	<div class="r_title"><span>员动力-家庭大宗消费</span> </div>
+            	<div class="r_cont">
+            		<div class="data_item d_col_1"><p>待还款总额(元)</p><p>100,068.66</p></div><div class="vertical_line"></div><div class="data_item d_col_2"><p>还款期数</p><p>12期</p></div><div class="vertical_line"></div><div class="data_item d_col_3"><p>已还期数</p><p>6期</p></div><div class="Chevron_right"><img src="images/Chevron_right.png" alt=""></div>
+            	</div>
+            	<div class="r_bottom_dec"></div>
+            </div>
+            <div class="r_item">
+            	<div class="r_title"><span>员动力-家庭大宗消费</span> </div>
+            	<div class="r_cont">
+            		<div class="data_item d_col_1"><p>待还款总额(元)</p><p>100,068.66</p></div><div class="vertical_line"></div><div class="data_item d_col_2"><p>还款期数</p><p>12期</p></div><div class="vertical_line"></div><div class="data_item d_col_3"><p>已还期数</p><p>6期</p></div><div class="Chevron_right"><img src="images/Chevron_right.png" alt=""></div>
+            	</div>
+            	<div class="r_bottom_dec"></div>
+            </div>
+            <div class="r_item">
+            	<div class="r_title"><span>员动力-家庭大宗消费</span> </div>
+            	<div class="r_cont">
+            		<div class="data_item d_col_1"><p>待还款总额(元)</p><p>100,068.66</p></div><div class="vertical_line"></div><div class="data_item d_col_2"><p>还款期数</p><p>12期</p></div><div class="vertical_line"></div><div class="data_item d_col_3"><p>已还期数</p><p>6期</p></div><div class="Chevron_right"><img src="images/Chevron_right.png" alt=""></div>
+            	</div>
+            	<div class="r_bottom_dec"></div>
+            </div>
+            <div class="r_item">
+            	<div class="r_title"><span>员动力-家庭大宗消费</span> </div>
+            	<div class="r_cont">
+            		<div class="data_item d_col_1"><p>待还款总额(元)</p><p>100,068.66</p></div><div class="vertical_line"></div><div class="data_item d_col_2"><p>还款期数</p><p>12期</p></div><div class="vertical_line"></div><div class="data_item d_col_3"><p>已还期数</p><p>6期</p></div><div class="Chevron_right"><img src="images/Chevron_right.png" alt=""></div>
+            	</div>
+            	<div class="r_bottom_dec"></div>
+            </div>
+        </div>
+    </article>
+    <footer>
+    	<div><span class="img home"></span><span>首页</span></div>
+    	<div><span class="img payment"></span><span>借款</span></div>
+    	<div class="on"><span class="img my"></span><span>我的</span></div>
+    </footer>
+    <script>
+    </script>
+</body>
+</html>

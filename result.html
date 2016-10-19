@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <title>员工</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" href="css/weui.min.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/weui-valid.css">
+    <link rel="stylesheet" href="plugin/layer/need/layer.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="plugin/layer/layer.js"></script>
+    <script type="text/javascript" src="js/public.js?v=20160720"></script>
+    <style>
+        /*额度测算计算器、还款计算器*/
+        .cal_container{padding-bottom:15px; }
+        .cal_container .weui_cells{font-size: 14px;}
+        .cal_container .weui_cells_title{background-color: #eeeef1;padding-top: .77em;padding-bottom: .3em;margin: 0;}
+        .cal_container .weui_cell_select{padding: 2px 15px;}
+        .cal_container .weui_input {padding: 0 0 0 11px;}
+        .cal_container .weui_cells_tips {font-size: 12px;}
+        .cal_container .weui_cells_tips>span{margin: 2px 0 0 2px;display: inline-block;vertical-align: middle;}
+        .cal_container .weui_cells_tips>i{font-size: 10px;}
+        .cal_container .weui_cells_checkbox>label{float: left;padding:0;}
+        .cal_container .weui_cells_checkbox .weui_check_label{padding:0 0 0 18px;}
+        .cal_container .weui_cells_checkbox .weui_cell:before{content: none;}
+        .cal_container .weui_cells_form  .weui_cell_ft{font-size: 14px}
+        .cal_container .weui_label{display: block;width: 80px;word-wrap: break-word;word-break: break-all;}
+        .cal_container .weui_cells_form .weui_icon_warn_show{display: block;margin-right: 2px;}
+        .cal_container .weui_icon_warn:before {font-size: 16px;}
+        .cal_container .weui_btn_primary {background-color: #0aaefd;}
+        .cal_container .weui_btn_primary:active {background-color: #0aaefd;}
+    </style>
+</head>
+<body ontouchstart>
+    <div class="cal_container" id="container">
+        <div class="bd">
+            <div class="weui_toptips weui_warn js_tooltips">格式不对</div>
+            <div class="weui_cells_title">额度测算计算器</div>
+            <div class="weui_cells">
+                <div class="weui_cell">
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>借款金额：</p>
+                    </div>
+                    <div class="weui_cell_ft">120,000.00元</div>
+                </div>
+                <div class="weui_cell">
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>借款期限：</p>
+                    </div>
+                    <div class="weui_cell_ft">24个月</div>
+                </div>
+                <div class="weui_cell">
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>借款利率：</p>
+                    </div>
+                    <div class="weui_cell_ft">12.60%年利率</div>
+                </div>
+                <div class="weui_cell">
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>每月还款金额：</p>
+                    </div>
+                    <div class="weui_cell_ft">6260.00元</div>
+                </div>
+                <div class="weui_cell">
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>借款总成本：</p>
+                    </div>
+                    <div class="weui_cell_ft">31,440.00元</div>
+                </div>
+                <div class="weui_cell">
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>还款总额：</p>
+                    </div>
+                    <div class="weui_cell_ft">150240.00元</div>
+                </div>
+            </div>
+            <div class="weui_cells_tips">温馨提示：以上信息仅供参考，实际放款金额以最终审批结果为准！</div>
+            <div class="weui_btn_area">
+                <a class="weui_btn weui_btn_primary" href="javascript:" id="showTooltips">返回</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>申请乐业分期</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/iscroll.css">
+    <script type="text/javascript" src="js/public.js"></script>
+    <script type="text/javascript" src="js/zepto.js"></script>
+    <script type="text/javascript" src="js/touch.js"></script>
+    <style>
+        .cont{height:100%;background-color: #fff;width:100%;position: fixed;top:0;bottom:0;z-index: 4;-webkit-backface-visibility: hidden;backface-visibility: hidden;-webkit-perspective: 1000;perspective: 1000;-webkit-transform-style: preserve-3d;-webkit-transition-duration: 400ms;}
+
+        .c_header{font-size:0.24rem;text-align: center;color:#202020;}
+        .c_header img{width: 2.8rem;height: 2.8rem;margin: 0.34rem auto 0.18rem auto;}
+        .c_header p{margin: 0.12rem 0 0 0;}
+        .c_header .c_h_btn{font-size:0.32rem;background-color:#0aaefd;color: #fff;border-radius:0.1rem;width:94%;line-height: 0.86rem;height: 0.86rem;margin: 0.26rem auto 0.3rem auto; }
+        
+        .c_h_title{font-size:0.24rem;line-height: 0.8rem;background-color:#eaeaea;padding: 0 0 0 3%;color:#808080;}
+
+        .c_h_process{font-size:12px;padding:25px 20px 10px 36px;box-sizing: border-box;border-top:1px solid #eee;color:#808080;overflow: auto;}
+        .c_h_process ul{border-left: 2px solid #ddd;}
+        .c_h_process ul li{position:relative;padding: 0 0 24px 0;float: left;width: 100%;border-left: 2px solid #ddd;}
+        .c_h_process ul li:last-child{border:none;margin: 0 0 0 2px;}
+        .c_h_process ul li:last-child .info{border:none;}
+        .c_h_process ul li:last-child.active{border:none;margin: 0 0 0 2px;}
+        .c_h_process ul li .bullet{width:34px;height:34px;border-radius:100%;position:absolute;left: -20px;top: -9px;color: #dadada;text-align:center;line-height:34px;background-color: #fff;border: 2px solid #dadada;}
+        .c_h_process ul li.active{color:#0aaefd;border-left: 2px solid #0aaefd;}
+        .c_h_process ul li.active .bullet{width:36px;height:36px;background-color:#0aaefd;left: -18px;top: -9px;border:0;color: #fff;line-height:36px;}
+        .c_h_process ul li .canceled{line-height: 15px;}
+        .c_h_process ul li .canceled>p:first-child{margin: 3px 0 -2px 0;}
+        .c_h_process ul li.active .canceled{line-height: 15px;}
+        .c_h_process ul li .info{padding:0 0 20px 0;border-bottom:1px solid #eee;margin-left:25px;}
+    </style>
+    <script type="text/javascript" src="js/iscroll.js"></script>
+    <script type="text/javascript">
+        function loaded () {
+            var tuwenScroller = new IScroll('.cont', {
+                probeType: 3,
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true
+            });
+        }
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    </script>
+</head>
+<body onload="loaded()">
+    <article class="cont">
+        <div>
+            <div class="c_header">
+                <img src="images/c_qrcode.png" alt="">
+                <p>长按二维码，关注我们，</p>
+                <p>随时查看最新申请进度！</p>
+                <div class="c_h_btn">查看借款所需资料</div>
+            </div>
+            <p class="c_h_title">申请进度</p>
+            <div class="c_h_process">
+                <ul>
+                    <li class="active">
+                        <div class="bullet">申请</div>
+                        <div class="info">
+                            <p>申请已提交，等待面签专员到企业面签</p>
+                        </div>
+                    </li>
+                    <li class="active">
+                        <div class="bullet">面签</div>
+                        <div class="info">
+                            <p>面签通过，风控审核中</p>
+                        </div>
+                    </li>
+                    <li class="active">
+                        <div class="bullet">审核</div>
+                        <div class="info">
+                            <p>审核通过，等待面签专员到企业签署合同</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bullet">签约</div>
+                        <div class="info">
+                            <p>合同已签署，放款复核中</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bullet">放款</div>
+                        <div class="info">
+                            <p>复核失败，等待面签专员提交复核资料</p>
+                        </div>
+                    </li>
+                    <li class="active">
+                        <div class="bullet canceled">
+                            <p>已</p>
+                            <p>撤销</p>
+                        </div>
+                        <div class="info">
+                            <p>客户已撤销复核申请</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bullet canceled">
+                            <p>已</p>
+                            <p>撤销</p>
+                        </div>
+                        <div class="info">
+                            <p>客户已撤销复核申请</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </article>
+    <script>
+    </script>
+</body>
+</html>

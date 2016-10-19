@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>员工</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+	<link rel="stylesheet" href="css/weui.min.css">
+	<link rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" href="css/weui-valid.css">
+	<link rel="stylesheet" href="plugin/layer/need/layer.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="plugin/layer/layer.js"></script>
+	<script type="text/javascript" src="js/public.js?v=20160720"></script>
+</head>
+<body>
+	<div class="con">
+		<form id="reg"  name="forms" method="post" action="#"> 
+			<div class="weui_cells_title">注册账号</div>
+			<div class="weui_cells weui_cells_form">
+	            <div class="weui_cell">
+	                <div class="weui_cell_hd"><label class="weui_label">邮箱</label></div>
+	                <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+	                    <input class="weui_input mail_input" type="text" placeholder="请输入邮箱" pat="/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))$/">
+	                </div>
+	            </div>
+	            <div class="weui_cell weui_vcode">
+	                <div class="weui_cell_hd"><label class="weui_label">邮箱验证码</label></div>
+	                <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+	                    <input class="weui_input" type="text" placeholder="请输入邮箱验证码">
+	                </div>
+	                <div class="weui_cell_ft">
+	                    <div class="qrcode-btn-wrap">
+		                	<input type="button" class="qrcode-btn mail_btn" value="获取验证码" />
+		                </div>
+	                </div>
+	            </div>
+	            <div class="weui_cell">
+	                <div class="weui_cell_hd"><label class="weui_label">手机号码</label></div>
+	                <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+	                    <input class="weui_input phone_input" type="number" placeholder="请输入手机号码" pat="/^(((13[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/">
+	                </div>
+	            </div>
+	            <div class="weui_cell weui_vcode">
+	                <div class="weui_cell_hd"><label class="weui_label">验证码</label></div>
+	                <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+	                    <input class="weui_input" type="text" placeholder="请输入验证码">
+	                </div>
+	                <div class="weui_cell_ft">
+		                <div class="qrcode-btn-wrap">
+		                	<input type="button" class="qrcode-btn phone_btn" value="获取验证码" />
+		                </div>
+	                </div>
+	            </div>
+	            <div class="weui_cell weui_vcode">
+	                <div class="weui_cell_hd"><label class="weui_label">登录密码</label></div>
+	                <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+	                    <input class="weui_input" type="password" placeholder="请设置登录密码">
+	                </div>
+	                <div class="weui_cell_ft">
+	                     <div class="pw-img-wrap"><img src="images/reg_img02.png"></div>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="weui_cells_tips"><p class="reg_p">注册即视为同意《<a class="reg_p_a">员动力注册协议</a>》</p></div>
+	        <div class="weui_btn_area">
+	            <a class="weui_btn weui_btn_blue we-register-btn" href="javascript:" id="showTooltips">注册</a>
+	        </div>
+	    </form>
+	</div>
+	<script>  
+		$(function (){
+			//weui 校验,初始化
+	        var weui_valid_obj = weui_valid($('.weui-input-wrap>input'));		
+			//注册
+			$('.we-register-btn').click(function (){
+				if(!weui_valid_obj.validResult()){
+					return false;
+				}
+				console.log('post');
+				/*$.post('#',$('#reg').serialize(),function(data){
+					if(data.error == 0){
+						location.href = '';
+						return false;
+					}else{
+						layer.open({
+							content: data.msg,
+							time: 2 
+						});
+						return false;
+					}
+				},"json");*/
+			});
+
+			//获取手机验证码
+			$(".phone_btn").click(function(){
+				if(!eval($('.phone_input').attr('pat')).test($('.phone_input').val())){
+					layer.open({
+						content: '手机号码格式有误',
+						time: 2 
+					});
+					return false;	//阻止冒泡
+				}
+	            $(this).attr('disabled','disabled');
+				getCode(this,$('.phone_input')[0],60);
+	            /*var that = $(this);
+				var phone = $('.phone_input').val();
+				$.post("#",{"phone":phone},function(data){
+					if(data.error == 0){
+						show();
+						return false;
+					}else{
+						layer.open({
+							content: data.msg,
+							time: 2 
+						});
+					}
+	                that.removeAttr('disabled');
+				},"json");*/			
+	   		});
+
+			//获取邮箱验证码
+			$('.mail_btn').click(function (){
+				if(!eval($('.mail_input').attr('pat')).test($('.mail_input').val())){
+					layer.open({
+						content: '邮箱格式有误',
+						time: 2 
+					});
+					return false;	//阻止冒泡
+				}
+				$(this).attr('disabled','disabled');
+	            getCode(this,$('.phone_input')[0],60);
+	            /*var that = $(this);
+				var email = $("#email").val();
+				$.post("./sendemail",{"email":email},function(data){
+					if(data.error == 0){
+						$('.btn_3').html('已发送').css('color','#bcbcbc');
+						return false;
+					}else{
+						layer.open({
+							content: data.msg,
+							time: 2 
+						});
+					}
+	                that.removeAttr('disabled');
+					return false;
+				},"json");*/			
+			});
+
+			//协议
+			$('.reg_p_a').click(function (){
+				layer.open({
+					title: [
+						'员动力服务协议',
+						'background-color:#0aaefd; color:#fff;'
+					],
+					style: 'max-width: 100%;height:100%; border:none;',
+					content: '<div class="agreement">'
+					+'<p class="reg_p1">在您注册成为本网站的会员之前，请您认真阅读本会员注册协议。您必须完全同意以下所有条款，方能成为本网站的会员。作为本网站用户，您必须是中国大陆公民，年龄在18周岁以上，且具有完全的民事权利能力及民事行为能力。如不具备上述资格，您应立即停止在本网站的注册程序、停止使用本网站服务，本网站亦有权随时终止您的注册进程及本网站服务，您应对您的注册给本网站带来的损失承担全额赔偿责任。</p>'
+					
+					+'<p class="reg_p1">一、会员条款的确认和接受</p>'
+					
+					+'<p class="reg_p2">本协议是注册会员与员动力公司及其关联企业之间的法律协议。</p>'
+					+'<p class="reg_p2">关联企业”系指现在或将来与员动力公司构成“一方控制、共同控制另一方或对另一方施加重大影响，以及两方或两方以上同受一方控制、共同控制或重大影响”的关系的企业，下文直称为“员动力”。</p>'
+					+'<p class="reg_p2">注册会员”是指愿意接受或实际上已经接受员动力提供的产品和服务的个人。</p>'
+					+'<p class="reg_p2">此份协议是注册会员接受员动力产品和服务时适用的通用条款。因此，在注册成为员动力会员的注册会员前或接受员动力的产品和服务之前，确认已经详细地阅读了本注册会员协议的所有内容。</p>'
+					+'<p class="reg_p2">注册会员了解并同意：只要注册会员点击“同意”按钮并完成注册，注册会员就已接受了本注册会员协议及员动力公布的各项服务规则（包括填写实名的联系方式等等），并愿意受其约束。如果发生纠纷，注册会员不得以未仔细阅读为由进行抗辩。</p>'
+					+'<p class="reg_p2">注册会员了解并同意：随着市场经营情况的变化，员动力有权随时更改本注册会员协议及相关服务规则。修改本注册会员协议时，员动力将于相关页面公告修改的事实，有权不对注册会员进行个别通知。注册会员应该在每次登录购买产品和服务前查询员动力官方网站的相关公告，以了解本注册会员协议及其他服务规则的变化。若注册会员不同意本注册会员协议或相关服务规则，或者不同意员动力作出的修改，注册会员可以主动停止使用员动力提供的产品和服务，如果在员动力修改协议或服务规则后，注册会员仍继续使用员动力提供的产品和服务，即表示注册会员同意员动力对本注册会员协议及相关服务规则所做的所有修改。由于注册会员在注册会员协议变更后因未熟悉公告规定而引起的损失，员动力将不会承担任何责任。</p>'
+					+'<p class="reg_p2">员动力（以下简称本站）的各项电子服务的所有权和运作权归本站。本站提供的服务将完全按照其发布的服务条款和操作规则严格执行。注册会员必须完全同意所有服务条款并完成注册程序，才能成为本站的注册会员。注册会员确认：本协议条款是处理双方权利义务的当然约定依据，除非违反国家强制性法律，否则始终有效。在下订单的同时，您也同时承认了您拥有购买这些产品的权利能力和行为能力，并且将您对您在订单中提供的所有信息的真实性负责。</p>'
+					
+					
+					+'<p class="reg_p1">二、服务及隐私保护</p>'
+					
+					+'<p class="reg_p2">本站运用自己的操作系统通过国际互联网络为注册会员提供网络服务。同时，注册会员必须：</p>'
+					+'<p class="reg_p2">1.自行配备上网的所需设备，包括个人电脑、调制解调器或其他必备上网装置。</p>'
+					+'<p class="reg_p2">2.自行负担个人上网所支付的与此服务有关的电话费用、网络费用。</p>'
+					+'<p class="reg_p2">3.提供详尽、准确的个人资料。</p>'
+					+'<p class="reg_p2">4.不断更新注册资料，符合及时、详尽、准确的要求。</p>'
+					+'<p class="reg_p2">5.本站对注册会员的电子邮件、手机号等隐私资料进行保护，承诺不会在未获得注册会员许可的情况下擅自将注册会员的个人资料信息出租或出售给任何第三方，但以下情况除外：</p>'
+					+'<p class="reg_p2">5.1注册会员同意让第三方共享资料。</p>'
+					+'<p class="reg_p2">5.2注册会员同意公开其个人资料，享受为其提供的产品和服务。</p>'
+					+'<p class="reg_p2">5.3本站需要听从法庭传票、法律命令或遵循法律程序。</p>'
+					+'<p class="reg_p2">5.4本站发现注册会员违反了本站服务条款或本站其它使用规定。</p>'
+					+'<p class="reg_p2">如果注册会员提供的资料包含有不正确的信息，本站保留立即停止向该注册会员使用网络服务资格的权利。</p>'
+					
+					
+					+'<p class="reg_p1">三、注册会员的帐户信息保护及披露</p>'
+					
+					+'<p class="reg_p2">注册会员一旦注册成功，成为本站的合法的注册会员。您可随时根据需要改变您的密码。注册会员将对注册会员名和密码安全负全部责任。另外，每个注册会员都要对以其注册会员名进行的所有活动和事件负全责。注册会员若发现任何非法使用注册会员帐户或存在安全漏洞的情况，请立即通告本站。</p>'
+					+'<p class="reg_p2">注册会员同意本网站在业务运营中收集和储存会员的用户信息，包括但不限于会员自行提供的资料和信息，以及本网站自行收集、取得的会员在本网站的交易记录和使用信息等。本网站收集和储存的用户信息的主要目的在于提高为会员提供服务的效率和质量。</p>'
+					+'<p class="reg_p2">注册会员同意本网站在业务运营中使用会员的用户信息，包括但不限于：</p>'
+					+'<p class="reg_p2">(1) 向本网站的合作机构（该合作机构仅限于本网站为了完成拟向您提供的服务而合作的机构）提供会员的用户信息；</p>'
+					+'<p class="reg_p2">(2) 由人工或自动程序对会员用户信息进行评估、 分类、研究；</p>'
+					+'<p class="reg_p2">(3) 使用会员的用户信息以改进本网站的推广；</p>'
+					+'<p class="reg_p2">(4) 使用会员提供的联系方式与会员联络并向其推送有关业务和管理方面的信息。</p>'
+					+'<p class="reg_p2">本网站可能通过审查会员的资料以区分或鉴定使用多个用户名或别名的会员，以识别问题或解决有关争议。</p>'
+					
+					+'<p class="reg_p1">四、拒绝提供担保及免责声明</p>'
+					
+					+'<p class="reg_p2">注册会员个人对网络服务的使用承担风险。本站对此不作任何类型的担保，不论是明确的或隐含的，但是不对商业性的隐含担保、特定目的和不违反规定的适当担保作限制。本站不担保服务一定能满足注册会员的要求，也不担保服务不会受中断，对服务的及时性，安全性，出错发生都不作担保。本站对在本站上得到的任何商品、服务或交易进程，不作担保。</p>'
+					
+					+'<p class="reg_p1">五、会员管理</p>'
+					
+					+'<p class="reg_p2">注册会员单独承担发布内容的责任。会员对服务的使用是根据所有适用于服务的地方法律、国家法律和国际法律标准的。注册会员承诺： </p>'
+					+'<p class="reg_p2">1．在本网站的网页上发布信息或者利用本网站的服务时必须符合中国有关法规，不得在本网站的网页上或者利用本网站的服务制作、复制、发布、传播以下信息： </p>'
+					+'<p class="reg_p2">（1）反对宪法所确定的基本原则的。 </p>'
+					+'<p class="reg_p2">（2）危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的。</p>'
+					+'<p class="reg_p2">（3）损害国家荣誉和利益的。</p>'
+					+'<p class="reg_p2">（4）煽动民族仇恨、民族歧视，破坏民族团结的。</p>'
+					+'<p class="reg_p2">（5）破坏国家宗教政策，宣扬邪教和封建迷信的。 </p>'
+					+'<p class="reg_p2">（6）散布谣言，扰乱社会秩序，破坏社会稳定的。</p>'
+					+'<p class="reg_p2">（7）散布淫秽、色情、赌博、暴力、凶杀、恐怖内容或者教唆犯罪的。 </p>'
+					+'<p class="reg_p2">（8）侮辱或者诽谤他人，侵害他人合法权益的。</p>'
+					+'<p class="reg_p2">（9）含有法律、行政法规禁止的其他内容的。</p>'
+					+'<p class="reg_p2">2．在本网站的网页上发布信息或者利用本网站的服务时，还必须符合其他有关国家和地区的法律规定以及国际法的有关规定。 </p>'
+					+'<p class="reg_p2">3．不利用本网站的服务从事以下活动：</p>'
+					+'<p class="reg_p2">（1）未经允许，进入计算机信息网络或者使用计算机信息网络资源的。</p>'
+					+'<p class="reg_p2">（2）未经允许，对计算机信息网络功能进行删除、修改或者增加的。 </p>'
+					+'<p class="reg_p2">（3）未经允许，对进入计算机信息网络中存储、处理或者传输的数据和应用程序进行删除、修改或者增加的。 </p>'
+					+'<p class="reg_p2">（4）故意制作、传播计算机病毒等破坏性程序的。</p>'
+					+'<p class="reg_p2">（5）其他危害计算机信息网络安全的行为。</p>'
+					+'<p class="reg_p2">4．不以任何方式干扰本网站的服务。</p>'
+					+'<p class="reg_p2">5．遵守本网站的其他规定和程序。 </p>'
+					+'<p class="reg_p2">注册会员须对自己在使用本网站服务过程中的行为承担法律责任，承担法律责任的形式包括但不限于：对受到侵害者进行赔偿，在本网站首先承担了因会员行为导致的行政处罚或侵权损害赔偿责任后，会员应给予本网站等额赔偿。会员理解，如果本网站发现其网站传输的信息明显属于第九条第一款所列内容之一，依据中国法律，本网站有义务立即停止传输，保存有关记录，向国家有关机关报告，并且删除含有该内容的地址、目录或关闭服务器。 </p>'
+					+'<p class="reg_p2">会员使用本网站论坛服务进行信息发布条件的行为，也须遵守本条的规定。 </p>'
+					+'<p class="reg_p2">若会员的行为不符合以上提到的服务条款，本网站将作出独立判断立即取消其服务账号。</p>'
+					
+					+'<p class="reg_p1">六、有限责任</p>'
+					
+					+'<p class="reg_p2">本站对任何直接、间接、偶然、特殊及继起的损害不负责任，这些损害可能来自：不正当使用网络服务，在网上购买商品或进行同类型服务，在网上进行交易，非法使用网络服务或注册会员传送的信息有所变动。这些行为都有可能会导致本站的形象受损，所以本站事先提出这种损害的可能性。</p>'
+					
+					+'<p class="reg_p1">七、通告</p>'
+					
+					+'<p class="reg_p2">所有发给注册会员的通告都可通过重要页面的公告或电子邮件或常规的信件传送。本站的活动信息也将定期通过页面公告及电 子邮件方式向注册会员发送。注册会员协议条款的修改、服务变更、或其它重要事件的通告会以电子邮箱或者短信进行通知。</p>'
+					
+					+'<p class="reg_p1">八、责任限制</p>'
+					
+					+'<p class="reg_p2">如因不可抗力或其他本站无法控制的原因使本站销售系统崩溃或无法正常使用导致网上交易无法完成或丢失有关的信息、记录等，本站不承担责任。但是本站会尽可能合理地协助处理善后事宜，并努力使客户免受经济损失。</p>'
+					+'<p class="reg_p2">除了本站的使用条件中规定的其它限制和除外情况之外，在中国法律法规所允许的限度内，对于因交易而引起的或与之有关的任何直接的、间接的、特殊的、附带的、后果性的或惩罚性的损害，或任何其它性质的损害，本站、本站的董事、管理人员、雇员、代理或其它代表在任何情况下都不承担责任。本站的全部责任，不论是合同、保证、侵权（包括过失）项下的还是其它的责任，均不超过您所购买的与该索赔有关的商品或服务价值额。</p>'
+					
+					+'<p class="reg_p1">九、法律管辖和适用</p>'
+					
+					+'<p class="reg_p2">本协议的订立、执行和解释及争议的解决均应适用中国法律。</p>'
+					+'<p class="reg_p2">如发生本站服务条款与中国法律相抵触时，则这些条款将完全按法律规定重新解释，而其它合法条款则依旧保持对注册会员产生法律效力和影响。</p>'
+					+'<p class="reg_p2">本协议的规定是可分割的，如本协议任何规定被裁定为无效或不可执行，该规定可被删除而其余条款应予以执行。</p>'
+					+'<p class="reg_p2">如双方就本协议内容或其执行发生任何争议，双方应尽力友好协商解决；协商不成时，任何一方均可向深圳市福田区人民法院提起诉讼。</p>'
+					
+					+'<p class="reg_p1">十、其他规定</p>'
+					
+					+'<p class="reg_p2">如本用户协议中的任何内容无论因何种原因完全或部分无效或不具有执行力，本用户协议的其余内容仍应有效并且对协议各方有约束力。</p>'
+					+'<p class="reg_p2">本用户协议中的标题仅为方便而设，不具法律或契约效果。</p>'
+					+'<p class="reg_p2">本协议条款的最终解释权归员动力公司所有。</p>'			
+					+'<p class="reg_p3"> 2016年6月1日。</p>'	
+	   
+					+'</div>'
+				});
+			});
+			
+			//密码显示与隐藏
+			$('.pw-img-wrap').click(function (){
+				var $pwInput = $(this).parents('.weui_cell').find('.weui-input-wrap').children('input');
+				if($pwInput.attr('type')=='password'){
+					$pwInput.attr('type','text');
+					$(this).children('img').attr('src','/images/reg_img03.png');
+				}else{
+					$pwInput.attr('type','password');
+					$(this).children('img').attr('src','/images/reg_img02.png');
+				}
+			});
+		}); 
+		
+	</script>  
+</body>
+</html>

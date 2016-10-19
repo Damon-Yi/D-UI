@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>分期购</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/iscroll.css">
+    <script type="text/javascript" src="js/public.js"></script>
+    <script type="text/javascript" src="js/zepto.js"></script>
+    <script type="text/javascript" src="js/touch.js"></script>
+    <style>
+        .cont{height:100%;background-color: #fff;width:100%;position: fixed;top:0;bottom:0;z-index: 4;-webkit-backface-visibility: hidden;backface-visibility: hidden;-webkit-perspective: 1000;perspective: 1000;-webkit-transform-style: preserve-3d;-webkit-transition-duration: 400ms;}
+
+        .c_header{font-size:0.24rem;padding:0.24rem;overflow: auto;color: #808080;}
+        .c_header>img{width: 1rem;height: 1rem;float:left;}
+        .c_header .c_info{float: left;margin: 0 0 0 0.32rem;}
+        .c_header .c_info .c_line2{margin: 0.14rem 0 0.16rem 0;}
+        .c_header .c_contact{float: right;}
+        .c_header .c_contact img{width: 0.4rem;height: 0.4rem;display: block;margin: 0.12rem auto;}
+        .c_header .c_contact p{color: #0aaefd;}
+
+        .c_h_title{font-size:0.24rem;line-height: 0.8rem;background-color:#eaeaea;padding: 0 0 0 3%;color:#808080;}
+
+        .c_h_process{font-size:12px;padding:25px 20px 10px 36px;box-sizing: border-box;border-top:1px solid #eee;color:#808080;overflow: auto;}
+        .c_h_process ul{border-left: 2px solid #ddd;}
+        .c_h_process ul li{position:relative;padding: 0 0 24px 0;float: left;width: 100%;border-left: 2px solid #ddd;}
+        .c_h_process ul li:last-child{border:none;margin: 0 0 0 2px;}
+        .c_h_process ul li:last-child .info{border:none;}
+        .c_h_process ul li:last-child.active{border:none;margin: 0 0 0 2px;}
+        .c_h_process ul li .bullet{width:34px;height:34px;border-radius:100%;position:absolute;left: -20px;top: -9px;color: #dadada;text-align:center;line-height:34px;background-color: #fff;border: 2px solid #dadada;}
+        .c_h_process ul li.active{color:#0aaefd;border-left: 2px solid #0aaefd;}
+        .c_h_process ul li.active .bullet{width:36px;height:36px;background-color:#0aaefd;left: -18px;top: -9px;border:0;color: #fff;line-height:36px;}
+        .c_h_process ul li .canceled{line-height: 15px;}
+        .c_h_process ul li .canceled>p:first-child{margin: 3px 0 -2px 0;}
+        .c_h_process ul li.active .canceled{line-height: 15px;}
+        .c_h_process ul li .info{padding:0 0 20px 0;border-bottom:1px solid #eee;margin-left:25px;}
+    </style>
+    <script type="text/javascript" src="js/iscroll.js"></script>
+    <script type="text/javascript">
+        function loaded () {
+            var tuwenScroller = new IScroll('.cont', {
+                probeType: 3,
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,click:true
+            });
+        }
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    </script>
+</head>
+<body onload="loaded()">
+    <article class="cont">
+        <div>
+            <div class="c_header">
+                <img src="images/c_head.png" alt="">
+                <div class="c_info">
+                    <p class="c_line2"><span>借款金额：</span><span>15万</span></p>
+                    <p><span>借款期数：</span><span>24期</span></p>
+                </div>
+                <div class="c_contact">
+                    <a href="tel:400-161-1188">
+                        <img src="images/phone.png" alt="">
+                        <p>联系客服</p>
+                    </a>
+                </div>
+            </div>
+            <p class="c_h_title">申请进度</p>
+            <div class="c_h_process">
+                <ul>
+                    <li class="active">
+                        <div class="bullet">申请</div>
+                        <div class="info">
+                            <p>申请已提交，等待面签专员到企业面签</p>
+                        </div>
+                    </li>
+                    <li class="active">
+                        <div class="bullet">面签</div>
+                        <div class="info">
+                            <p>面签通过，风控审核中</p>
+                        </div>
+                    </li>
+                    <li class="active">
+                        <div class="bullet">审核</div>
+                        <div class="info">
+                            <p>审核通过，等待面签专员到企业签署合同</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bullet">签约</div>
+                        <div class="info">
+                            <p>合同已签署，放款复核中</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bullet">放款</div>
+                        <div class="info">
+                            <p>复核失败，等待面签专员提交复核资料</p>
+                        </div>
+                    </li>
+                    <li class="active">
+                        <div class="bullet canceled">
+                            <p>已</p>
+                            <p>撤销</p>
+                        </div>
+                        <div class="info">
+                            <p>客户已撤销复核申请</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bullet canceled">
+                            <p>已</p>
+                            <p>撤销</p>
+                        </div>
+                        <div class="info">
+                            <p>客户已撤销复核申请</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </article>
+    <script>
+    </script>
+</body>
+</html>

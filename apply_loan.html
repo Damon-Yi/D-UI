@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>员工</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" href="css/weui.min.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/weui-valid.css">
+    <link rel="stylesheet" href="plugin/layer/need/layer.css">
+    <link rel="stylesheet" href="plugin/swiper/swiper.min.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="plugin/layer/layer.js"></script>
+    <script type="text/javascript" src="plugin/swiper/swiper.min.js"></script>
+    <script type="text/javascript" src="js/public.js?v=20160720"></script>
+    <style>
+        .button_sp_area0>.weui_btn{width: 90%;margin: 15px 5%;font-size: 16px;}
+        .button_sp_area>.weui_btn{width: 40%;float: left;margin: 15px 5%;font-size: 16px;}
+
+        .weui_btn_primary0 {background-color: #0aaefd;}
+        .weui_btn_primary0:active,.weui_btn_primary0:visited{background-color: #0aaeed;}
+        .weui_btn_plain_primary0 {color: #0aaefd;border: 1px solid #0aaefd;}
+        .weui_cells_checkbox .weui_check:checked+.weui_icon_checked:before{color: #0aaefd;}
+
+        /*房产*/
+        .house_property_wrap{display: none;position: relative;}
+        .house_property_wrap_show{display: block;}
+        .house_property_wrap:before{content: " ";position: absolute;left: 0;top: 0;width: 100%;height: 1px;border-top: 1px solid #d9d9d9;color: #d9d9d9;-webkit-transform-origin: 0 0;transform-origin: 0 0;-webkit-transform: scaleY(.5);transform: scaleY(.5);left: 15px;}
+        /*贷款*/
+        .loan_wrap{display: none;position: relative;}
+        .loan_wrap_show{display: block;}
+        .loan_wrap:before{content: " ";position: absolute;left: 0;top: 0;width: 100%;height: 1px;border-top: 1px solid #d9d9d9;color: #d9d9d9;-webkit-transform-origin: 0 0;transform-origin: 0 0;-webkit-transform: scaleY(.5);transform: scaleY(.5);left: 15px;}
+        /*有效期*/
+        .valid_date_wrap{display: none;position: relative;}
+        .valid_date_wrap_show{display: block;}
+        .valid_date_wrap:before{content: " ";position: absolute;left: 0;top: 0;width: 100%;height: 1px;border-top: 1px solid #d9d9d9;color: #d9d9d9;-webkit-transform-origin: 0 0;transform-origin: 0 0;-webkit-transform: scaleY(.5);transform: scaleY(.5);left: 15px;}
+        /*已婚*/
+        .married_wrap{display: none;position: relative;}
+        .married_wrap_show{display: block;}
+        .married_wrap:before{content: " ";position: absolute;left: 0;top: 0;width: 100%;height: 1px;border-top: 1px solid #d9d9d9;color: #d9d9d9;-webkit-transform-origin: 0 0;transform-origin: 0 0;-webkit-transform: scaleY(.5);transform: scaleY(.5);left: 15px;}
+
+        .weui_icon_warn_show{display: inline-block;margin: 0 0 0 4px;}
+        .weui_icon_warn_show:before{font-size: 16px;color: #0aaefd;}
+    </style>
+</head>
+<body ontouchstart>
+    <form action="">
+        <div class="swiper-container step-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide swiper-no-swiping">
+                    <div class="weui_cells_title">申请人信息</div>
+                    <div class="weui_cells weui_cells_form">
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label class="weui_label">姓名</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+                                <input id="a_user_name" class="weui_input" type="text" title="" placeholder="请输入姓名"/>
+                            </div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label class="weui_label">证件号码</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+                                <input class="weui_input" type="text" id="idcard" placeholder="请输入证件号码"/>
+                            </div>
+                        </div>
+                        <div class="weui_cell weui_cell_select valid_date_flag">
+                            <div class="weui_cell_hd"><label class="weui_label">身份证有效期</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-select-wrap">
+                                <select class="weui_select" name="select2">
+                                    <option value="">请选择</option>
+                                    <option value="1">有效期</option>
+                                    <option value="2">长期</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="valid_date_wrap">
+                            <div class="weui_cell">
+                                <div class="weui_cell_hd"><label for="" class="weui_label">身份证有效期（至）</label></div>
+                                <div class="weui_cell_bd weui_cell_primary">
+                                    <input class="weui_input" type="date" value="" placeholder="请选择日期"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label class="weui_label">发证机关</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+                                <input class="weui_input" type="tel" title="" placeholder="请输入发证机关"/>
+                            </div>
+                        </div>
+                        <div class="weui_cell weui_cell_select">
+                            <div class="weui_cell_hd"><label for="" class="weui_label">籍贯</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-select-wrap">
+                                <select class="weui_select" name="select2">
+                                    <option value="">请选择</option>
+                                    <option value="1">其他</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label class="weui_label">户籍地址</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+                                <input class="weui_input" type="text" title="" placeholder="请输入户籍地址"/>
+                            </div>
+                        </div>
+                        <div class="weui_cell weui_cell_select">
+                            <div class="weui_cell_hd"><label for="" class="weui_label">教育程度</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-select-wrap">
+                                <select class="weui_select" name="select2">
+                                    <option value="">请选择</option>
+                                    <option value="1">小学</option>
+                                    <option value="2">初中</option>
+                                    <option value="3">高中</option>
+                                    <option value="4">中专</option>
+                                    <option value="5">大专</option>
+                                    <option value="6">本科</option>
+                                    <option value="7">硕士研究生及以上</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="weui_cell weui_cell_select married_flag">
+                            <div class="weui_cell_hd"><label for="" class="weui_label">婚姻状况</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-select-wrap">
+                                <select class="weui_select" name="select2">
+                                    <option value="">请选择</option>
+                                    <option value="1">未婚</option>
+                                    <option value="2">已婚</option>
+                                    <option value="3">离异</option>
+                                    <option value="4">丧偶</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="weui_cell weui_cell_select">
+                            <div class="weui_cell_hd"><label for="" class="weui_label">子女数目</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-select-wrap">
+                                <select class="weui_select" name="select2">
+                                    <option value="">请选择</option>
+                                    <option value="1">0</option>
+                                    <option value="2">1</option>
+                                    <option value="3">2</option>
+                                    <option value="4">3</option>
+                                    <option value="5">4</option>
+                                    <option value="6">5</option>
+                                    <option value="7">6</option>
+                                    <option value="8">7</option>
+                                    <option value="9">8</option>
+                                    <option value="10">9</option>
+                                    <option value="11">10</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="weui_cell weui_cell_select">
+                            <div class="weui_cell_hd"><label for="" class="weui_label">住房性质</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-select-wrap">
+                                <select class="weui_select" name="select2">
+                                    <option value="">请选择</option>
+                                    <option value="1">自建/购买</option>
+                                    <option value="2">租赁</option>
+                                    <option value="3">父母</option>
+                                    <option value="4">福利房</option>
+                                    <option value="5">宿舍</option>
+                                    <option value="6">其他</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="weui_cell weui_cell_select">
+                            <div class="weui_cell_hd"><label for="" class="weui_label">住宅地址</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-select-wrap">
+                                <select class="weui_select" name="select2">
+                                    <option value="">请选择</option>
+                                    <option value="1">其他</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label class="weui_label">详细地址</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+                                <input class="weui_input" type="text" title="" placeholder="请输入详细地址"/>
+                            </div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label class="weui_label">居住时间</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+                                <input class="weui_input" type="tel" title="" placeholder="请输入居住时间"/>
+                            </div>
+                            <div class="weui_cell_ft">年</div>
+                        </div>
+                        <div class="weui_cell weui_cell_select">
+                            <div class="weui_cell_hd"><label for="" class="weui_label">共同居住成员</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-select-wrap">
+                                <select class="weui_select" name="select2">
+                                    <option value="">请选择</option>
+                                    <option value="1">父母</option>
+                                    <option value="2">配偶</option>
+                                    <option value="3">子女</option>
+                                    <option value="4">亲戚</option>
+                                    <option value="5">朋友</option>
+                                    <option value="6">同事</option>
+                                    <option value="7">无</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button_sp_area0">
+                        <a href="javascript:;" class="weui_btn weui_btn_primary0 next_step">下一步</a>
+                    </div>
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    <div class="weui_cells_title">工作信息</div>
+                    <div class="weui_cells weui_cells_form">
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label class="weui_label">所在部门</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+                                <input class="weui_input" type="text" title="" placeholder="请输入所在部门"/>
+                            </div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label class="weui_label">职位</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+                                <input class="weui_input" type="text" placeholder="请输入职位"/>
+                            </div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label class="weui_label">月平均收入</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+                                <input class="weui_input" type="tel" placeholder="请输入月平均收入" pat="/^[1-9]\d{0,5}$/" maxLen="6"/>
+                            </div>
+                            <div class="weui_cell_ft">元</div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label for="" class="weui_label">入职时间</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+                                <input class="weui_input" type="date" value="">
+                            </div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label class="weui_label">社会工龄</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+                                <input class="weui_input" type="tel" placeholder="请输入社会工龄"/>
+                            </div>
+                            <div class="weui_cell_ft">年</div>
+                        </div>
+                        <div class="weui_cell weui_cells_checkbox">
+                            <label for="" class="weui_cell weui_label">是否缴纳社保</label>
+                            <div class="weui_cell_bd">
+                                <label class="weui_cell weui_check_label" for="s10">
+                                    <div class="weui_cell_hd">
+                                        <input type="radio" name="radio1" class="weui_check" id="s10">
+                                        <i class="weui_icon_checked"></i>
+                                    </div>
+                                    <div class="weui_cell_bd weui_cell_primary">
+                                        <p>是</p>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="weui_cell_bd">
+                                <label class="weui_cell weui_check_label" for="s11">
+                                    <div class="weui_cell_hd">
+                                        <input type="radio" name="radio1" class="weui_check" id="s11" checked="checked">
+                                        <i class="weui_icon_checked"></i>
+                                    </div>
+                                    <div class="weui_cell_bd weui_cell_primary">
+                                        <p>否</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weui_cells_title">房产信息</div>
+                    <div class="weui_cells weui_cells_form">
+                        <div class="weui_cell weui_cells_checkbox house_property_flag">
+                            <label for="" class="weui_cell weui_label">是否有本地房产</label>
+                            <div class="weui_cell_bd">
+                                <label class="weui_cell weui_check_label" for="s12">
+                                    <div class="weui_cell_hd">
+                                        <input type="radio" name="radio2" class="weui_check" id="s12">
+                                        <i class="weui_icon_checked"></i>
+                                    </div>
+                                    <div class="weui_cell_bd weui_cell_primary">
+                                        <p>是</p>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="weui_cell_bd">
+                                <label class="weui_cell weui_check_label" for="s13">
+                                    <div class="weui_cell_hd">
+                                        <input type="radio" name="radio2" class="weui_check" id="s13" checked="checked">
+                                        <i class="weui_icon_checked"></i>
+                                    </div>
+                                    <div class="weui_cell_bd weui_cell_primary">
+                                        <p>否</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="house_property_wrap">
+                            <div class="weui_cell weui_cell_select">
+                                <div class="weui_cell_hd"><label for="" class="weui_label">房产地址</label></div>
+                                <div class="weui_cell_bd weui_cell_primary">
+                                    <select class="weui_select" name="select2">
+                                        <option value="">请选择</option>
+                                        <option value="1">其他</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="weui_cell">
+                                <div class="weui_cell_hd"><label for="" class="weui_label">详细地址</label></div>
+                                <div class="weui_cell_bd weui_cell_primary">
+                                    <input class="weui_input" type="text" value="" placeholder="请输入详细地址"/>
+                                </div>
+                            </div>
+                            <div class="weui_cell weui_cell_select">
+                                <div class="weui_cell_hd"><label for="" class="weui_label">房产类型</label></div>
+                                <div class="weui_cell_bd weui_cell_primary">
+                                    <select class="weui_select" name="select2">
+                                        <option value="">请选择</option>
+                                        <option value="1">普通住宅</option>
+                                        <option value="2">别墅</option>
+                                        <option value="3">商铺</option>
+                                        <option value="4">其他</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="weui_cell">
+                                <div class="weui_cell_hd"><label for="" class="weui_label">房产面积</label></div>
+                                <div class="weui_cell_bd weui_cell_primary">
+                                    <input class="weui_input" type="tel" value="" placeholder="请输入房产面积"/>
+                                </div>
+                                <div class="weui_cell_ft">平方米</div>
+                            </div>
+                            <div class="weui_cell">
+                                <div class="weui_cell_hd"><label class="weui_label">房产权属人</label></div>
+                                <div class="weui_cell_bd weui_cell_primary">
+                                    <input class="weui_input" type="text" placeholder="请输入房产权属人"/>
+                                </div>
+                            </div>
+                            <div class="weui_cell">
+                                <div class="weui_cell_hd"><label for="" class="weui_label">建筑年份</label></div>
+                                <div class="weui_cell_bd weui_cell_primary">
+                                    <input class="weui_input" type="date" value="">
+                                </div>
+                            </div>
+                            <div class="weui_cell weui_cell_select">
+                                <div class="weui_cell_hd"><label class="weui_label">房产使用状况</label></div>
+                                <div class="weui_cell_bd weui_cell_primary">
+                                    <select class="weui_select" name="select2">
+                                        <option value="">请选择</option>
+                                        <option value="1">自住（自用）</option>
+                                        <option value="2">出租</option>
+                                        <option value="3">空置</option>
+                                        <option value="4">其他</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="weui_cell weui_cell_select">
+                                <div class="weui_cell_hd"><label class="weui_label">房产取得方式</label></div>
+                                <div class="weui_cell_bd weui_cell_primary">
+                                    <select class="weui_select" name="select2">
+                                        <option value="">请选择</option>
+                                        <option value="1">自建</option>
+                                        <option value="2">购买</option>
+                                        <option value="3">继承</option>
+                                        <option value="4">回迁/安置房</option>
+                                        <option value="5">赠予所得</option>
+                                        <option value="6">其他</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="weui_cell weui_cells_checkbox loan_flag">
+                                <label for="" class="weui_cell weui_label">是否有贷款</label>
+                                <div class="weui_cell_bd">
+                                    <label class="weui_cell weui_check_label" for="s14">
+                                        <div class="weui_cell_hd">
+                                            <input type="radio" name="radio3" class="weui_check" id="s14">
+                                            <i class="weui_icon_checked"></i>
+                                        </div>
+                                        <div class="weui_cell_bd weui_cell_primary">
+                                            <p>是</p>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="weui_cell_bd">
+                                    <label class="weui_cell weui_check_label" for="s15">
+                                        <div class="weui_cell_hd">
+                                            <input type="radio" name="radio3" class="weui_check" id="s15" checked="checked">
+                                            <i class="weui_icon_checked"></i>
+                                        </div>
+                                        <div class="weui_cell_bd weui_cell_primary">
+                                            <p>否</p>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="loan_wrap">
+                            <div class="weui_cell">
+                                <div class="weui_cell_hd"><label for="" class="weui_label">月还款额</label></div>
+                                <div class="weui_cell_bd weui_cell_primary">
+                                    <input class="weui_input" type="tel" value="" placeholder="请输入月还款额"/>
+                                </div>
+                                <div class="weui_cell_ft">元</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button_sp_area">
+                        <a href="javascript:;" class="weui_btn weui_btn_plain_primary0 pre_step">上一步</a>
+                        <a href="javascript:;" class="weui_btn weui_btn_primary0 next_step">下一步</a>
+                    </div>
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    <div class="weui_cells_title">家庭成员信息</div>
+                    <div class="weui_cells weui_cells_form">
+                        <div class="married_wrap">
+                            <div class="married_required_wrap">
+                                <div class="weui_cell">
+                                    <div class="weui_cell_hd"><label class="weui_label">配偶姓名</label></div>
+                                    <div class="weui_cell_bd weui_cell_primary">
+                                        <input class="weui_input" type="text" title="" placeholder="请输入配偶姓名"/>
+                                    </div>
+                                </div>
+                                <div class="weui_cell">
+                                    <div class="weui_cell_hd"><label class="weui_label">配偶联系电话</label></div>
+                                    <div class="weui_cell_bd weui_cell_primary">
+                                        <input class="weui_input" type="tel" placeholder="请输入配偶联系电话"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="weui_cell">
+                                <div class="weui_cell_hd"><label class="weui_label">配偶月收入</label></div>
+                                <div class="weui_cell_bd weui_cell_primary">
+                                    <input class="weui_input" type="tel" placeholder="请输入配偶月收入" required-field="no"/>
+                                </div>
+                            </div>
+                            <div class="weui_cell weui_cells_checkbox">
+                                <label for="" class="weui_cell weui_label">配偶是否知悉贷款</label>
+                                <div class="weui_cell_bd">
+                                    <label class="weui_cell weui_check_label" for="s16">
+                                        <div class="weui_cell_hd">
+                                            <input type="radio" name="radio4" class="weui_check" id="s16">
+                                            <i class="weui_icon_checked"></i>
+                                        </div>
+                                        <div class="weui_cell_bd weui_cell_primary">
+                                            <p>是</p>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="weui_cell_bd">
+                                    <label class="weui_cell weui_check_label" for="s17">
+                                        <div class="weui_cell_hd">
+                                            <input type="radio" name="radio4" class="weui_check" id="s17" checked="checked">
+                                            <i class="weui_icon_checked"></i>
+                                        </div>
+                                        <div class="weui_cell_bd weui_cell_primary">
+                                            <p>否</p>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label for="" class="weui_label">家庭成员姓名</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+                                <input class="weui_input" type="text" value="" placeholder="请输入家庭成员姓名"/>
+                            </div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label class="weui_label">家庭成员联系电话</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+                                <input class="weui_input" type="tel" placeholder="请输入家庭成员联系电话"/>
+                            </div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label for="" class="weui_label">家庭成员月收入</label></div>
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <input class="weui_input" type="text" value="" placeholder="请输入家庭成员月收入"/>
+                            </div>
+                        </div>
+                        <div class="weui_cell weui_cell_select">
+                            <div class="weui_cell_hd"><label for="" class="weui_label">家庭成员关系</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-select-wrap">
+                                <select class="weui_select" name="select2">
+                                    <option value="">请选择</option>
+                                    <option value="1">父亲</option>
+                                    <option value="2">母亲</option>
+                                    <option value="3">兄弟</option>
+                                    <option value="4">姐妹</option>
+                                    <option value="5">儿女</option>
+                                    <option value="6">其他亲属</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="weui_cell weui_cell_select">
+                            <div class="weui_cell_hd"><label for="" class="weui_label">家庭成员住宅地址</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-select-wrap">
+                                <select class="weui_select" name="select2">
+                                    <option value="">请选择</option>
+                                    <option value="1">其他</option>
+                                    
+                                </select>
+                            </div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label for="" class="weui_label">住宅详细地址</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+                                <input class="weui_input" type="text" value="" placeholder="请输入住宅详细地址"/>
+                            </div>
+                        </div>
+                        <div class="weui_cell weui_cells_checkbox">
+                            <label for="" class="weui_cell weui_label">家庭成员是否知悉贷款</label>
+                            <div class="weui_cell_bd">
+                                <label class="weui_cell weui_check_label" for="s18">
+                                    <div class="weui_cell_hd">
+                                        <input type="radio" name="radio5" class="weui_check" id="s18">
+                                        <i class="weui_icon_checked"></i>
+                                    </div>
+                                    <div class="weui_cell_bd weui_cell_primary">
+                                        <p>是</p>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="weui_cell_bd">
+                                <label class="weui_cell weui_check_label" for="s19">
+                                    <div class="weui_cell_hd">
+                                        <input type="radio" name="radio5" class="weui_check" id="s19" checked="checked">
+                                        <i class="weui_icon_checked"></i>
+                                    </div>
+                                    <div class="weui_cell_bd weui_cell_primary">
+                                        <p>否</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button_sp_area">
+                        <a href="javascript:;" class="weui_btn weui_btn_plain_primary0 pre_step">上一步</a>
+                        <a href="javascript:;" class="weui_btn weui_btn_primary0 next_step">下一步</a>
+                    </div>
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    <div class="weui_cells_title">同事联系人</div>
+                    <div class="weui_cells weui_cells_form">
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label class="weui_label">姓名</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+                                <input class="weui_input" type="text" title="" placeholder="请输入姓名"/>
+                            </div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label class="weui_label">联系电话</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+                                <input class="weui_input" type="tel" placeholder="请输入联系电话"/>
+                            </div>
+                        </div>
+                        <div class="weui_cell weui_cell_select">
+                            <div class="weui_cell_hd"><label for="" class="weui_label">联系地址</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-select-wrap">
+                                <select class="weui_select" name="select2">
+                                    <option value="">请选择</option>
+                                    <option value="1">其他</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label for="" class="weui_label">详细地址</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+                                <input class="weui_input" type="text" value="" placeholder="请输入住宅详细地址"/>
+                            </div>
+                        </div>
+                        <div class="weui_cell weui_cells_checkbox">
+                            <label for="" class="weui_cell weui_label">是否知悉贷款</label>
+                            <div class="weui_cell_bd">
+                                <label class="weui_cell weui_check_label" for="s20">
+                                    <div class="weui_cell_hd">
+                                        <input type="radio" name="radio6" class="weui_check" id="s20">
+                                        <i class="weui_icon_checked"></i>
+                                    </div>
+                                    <div class="weui_cell_bd weui_cell_primary">
+                                        <p>是</p>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="weui_cell_bd">
+                                <label class="weui_cell weui_check_label" for="s21">
+                                    <div class="weui_cell_hd">
+                                        <input type="radio" name="radio6" class="weui_check" id="s21" checked="checked">
+                                        <i class="weui_icon_checked"></i>
+                                    </div>
+                                    <div class="weui_cell_bd weui_cell_primary">
+                                        <p>否</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weui_cells_title">朋友联系人</div>
+                    <div class="weui_cells weui_cells_form">
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label class="weui_label">姓名</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+                                <input class="weui_input" type="text" title="" placeholder="请输入姓名"/>
+                            </div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label class="weui_label">联系电话</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+                                <input class="weui_input" type="tel" placeholder="请输入联系电话"/>
+                            </div>
+                        </div>
+                        <div class="weui_cell weui_cell_select">
+                            <div class="weui_cell_hd"><label for="" class="weui_label">联系地址</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-select-wrap">
+                                <select class="weui_select" name="select2">
+                                    <option value="">请选择</option>
+                                    <option value="1">其他</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label for="" class="weui_label">详细地址</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+                                <input class="weui_input" type="text" value="" placeholder="请输入详细地址"/>
+                            </div>
+                        </div>
+                        <div class="weui_cell weui_cells_checkbox">
+                            <label for="" class="weui_cell weui_label">是否知悉贷款</label>
+                            <div class="weui_cell_bd">
+                                <label class="weui_cell weui_check_label" for="s22">
+                                    <div class="weui_cell_hd">
+                                        <input type="radio" name="radio7" class="weui_check" id="s22">
+                                        <i class="weui_icon_checked"></i>
+                                    </div>
+                                    <div class="weui_cell_bd weui_cell_primary">
+                                        <p>是</p>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="weui_cell_bd">
+                                <label class="weui_cell weui_check_label" for="s23">
+                                    <div class="weui_cell_hd">
+                                        <input type="radio" name="radio7" class="weui_check" id="s23" checked="checked">
+                                        <i class="weui_icon_checked"></i>
+                                    </div>
+                                    <div class="weui_cell_bd weui_cell_primary">
+                                        <p>否</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button_sp_area">
+                        <a href="javascript:;" class="weui_btn weui_btn_plain_primary0 pre_step">上一步</a>
+                        <a href="javascript:;" class="weui_btn weui_btn_primary0 next_step">下一步</a>
+                    </div>
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    <div class="weui_cells_title">借款信息</div>
+                    <div class="weui_cells weui_cells_form">
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label class="weui_label">借款金额</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+                                <input class="weui_input" type="tel" title="" placeholder="最低1万，最高50万" pat="/^([1-9]|[1-4][0-9]|50)$/" maxLen="2"/>
+                            </div>
+                            <div class="weui_cell_ft">万</div>
+                        </div>
+                        <div class="weui_cell weui_cell_select">
+                            <div class="weui_cell_hd"><label class="weui_label">借款期数</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-select-wrap">
+                                <select class="weui_select" name="select2">
+                                    <option value="">请选择</option>
+                                    <option value="6">6期</option>
+                                    <option value="12">12期</option>
+                                    <option value="18">18期</option>
+                                    <option value="24">24期</option>
+                                    <option value="30">30期</option>
+                                    <option value="36">36期</option>
+                                    <option value="42">42期</option>
+                                    <option value="48">48期</option>
+                                    <option value="54">54期</option>
+                                    <option value="60">60期</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label class="weui_label">过去在本公司贷款申请次数</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+                                <input class="weui_input" type="tel" placeholder="请输入申请次数"/>
+                            </div>
+                            <div class="weui_cell_ft">次</div>
+                        </div>
+                        <div class="weui_cell weui_cell_select">
+                            <div class="weui_cell_hd"><label class="weui_label">贷款用途</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-select-wrap">
+                                <select class="weui_select" name="select2">
+                                    <option value="">请选择</option>
+                                    <option value="1">购买大额生活用品</option>
+                                    <option value="2">装修</option>
+                                    <option value="3">教育</option>
+                                    <option value="4">医疗</option>
+                                    <option value="5">旅游</option>
+                                    <option value="6">其他</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="weui_cell weui_cells_checkbox">
+                            <label for="" class="weui_cell weui_label">是否参加保险</label>
+                            <div class="weui_cell_bd">
+                                <label class="weui_cell weui_check_label" for="s24">
+                                    <div class="weui_cell_hd">
+                                        <input type="radio" name="radio8" class="weui_check" id="s24">
+                                        <i class="weui_icon_checked"></i>
+                                    </div>
+                                    <div class="weui_cell_bd weui_cell_primary">
+                                        <p>是</p>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="weui_cell_bd">
+                                <label class="weui_cell weui_check_label" for="s25">
+                                    <div class="weui_cell_hd">
+                                        <input type="radio" name="radio8" class="weui_check" id="s25" checked="checked">
+                                        <i class="weui_icon_checked"></i>
+                                    </div>
+                                    <div class="weui_cell_bd weui_cell_primary">
+                                        <p>否</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weui_cells_title">银行账户信息</div>
+                    <div class="weui_cells weui_cells_form">
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label class="weui_label">账户姓名</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+                                <input id="a_user_name_0" class="weui_input" type="text" disabled="true"/>
+                            </div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label class="weui_label">银行账号</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-input-wrap">
+                                <input class="weui_input" type="tel" title="" placeholder="请输入银行账号"/>
+                            </div>
+                        </div>
+                        <div class="weui_cell weui_cell_select">
+                            <div class="weui_cell_hd"><label for="" class="weui_label">开户银行</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-select-wrap">
+                                <select class="weui_select" name="select2">
+                                    <option value="">请选择</option>
+                                    <option value="1">招商银行</option>
+                                    <option value="2">中国工商银行</option>
+                                    <option value="3">中国农业银行</option>
+                                    <option value="4">中国银行</option>
+                                    <option value="5">中国邮政储蓄银行</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="weui_cell weui_cell_select">
+                            <div class="weui_cell_hd"><label class="weui_label">开户城市</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-select-wrap">
+                                <select class="weui_select" name="select2">
+                                    <option value="">请选择</option>
+                                    <option value="1">其他</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="weui_cell weui_cell_select">
+                            <div class="weui_cell_hd"><label class="weui_label">开户支行</label></div>
+                            <div class="weui_cell_bd weui_cell_primary weui-select-wrap">
+                                <select class="weui_select" name="select2">
+                                    <option value="">请选择</option>
+                                    <option value="1">其他</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button_sp_area">
+                        <a href="javascript:;" class="weui_btn weui_btn_plain_primary0 pre_step">上一步</a>
+                        <a href="javascript:;" class="weui_btn weui_btn_primary0 next_step">下一步</a>
+                    </div>
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    <div class="weui_cells_title">身份信息</div>
+                    <div class="weui_cells weui_cells_form">
+                        <div class="weui_cell">
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <div class="weui_uploader">
+                                    <div class="weui_uploader_hd weui_cell">
+                                        <div class="weui_cell_bd weui_cell_primary">身份证正面<i class="weui_icon_warn weui_icon_warn_show"></i></div>
+                                        <div class="weui_cell_ft"></div>
+                                    </div>
+                                    <div class="weui_uploader_bd">
+                                        <ul class="weui_uploader_files">
+                                            <li class="weui_uploader_file" style="background-image:url(http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/)"></li>
+                                            <li class="weui_uploader_file weui_uploader_status" style="background-image:url(http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/)">
+                                                <div class="weui_uploader_status_content">
+                                                    <i class="weui_icon_warn"></i>
+                                                </div>
+                                            </li>
+                                            <li class="weui_uploader_file weui_uploader_status" style="background-image:url(http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/)">
+                                                <div class="weui_uploader_status_content">50%</div>
+                                            </li>
+                                        </ul>
+                                        <div class="weui_uploader_input_wrp weui-input-wrap">
+                                            <input class="weui_uploader_input" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <div class="weui_uploader">
+                                    <div class="weui_uploader_hd weui_cell">
+                                        <div class="weui_cell_bd weui_cell_primary">身份证反面<i class="weui_icon_warn weui_icon_warn_show"></i></div>
+                                        <div class="weui_cell_ft"></div>
+                                    </div>
+                                    <div class="weui_uploader_bd">
+                                        <div class="weui_uploader_input_wrp weui-input-wrap">
+                                            <input class="weui_uploader_input" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <div class="weui_uploader">
+                                    <div class="weui_uploader_hd weui_cell">
+                                        <div class="weui_cell_bd weui_cell_primary">户口本<i class="weui_icon_warn weui_icon_warn_show"></i></div>
+                                    </div>
+                                    <div class="weui_uploader_bd">
+                                        <div class="weui_uploader_input_wrp weui-input-wrap">
+                                            <input class="weui_uploader_input" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <div class="weui_uploader">
+                                    <div class="weui_uploader_hd weui_cell">
+                                        <div class="weui_cell_bd weui_cell_primary">结婚证(已婚需提供)<i class="weui_icon_warn weui_icon_warn_show"></i></div>
+                                    </div>
+                                    <div class="weui_uploader_bd">
+                                        <div class="weui_uploader_input_wrp weui-input-wrap">
+                                            <input class="weui_uploader_input" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weui_cells_title">工作信息</div>
+                    <div class="weui_cells weui_cells_form">
+                        <div class="weui_cell">
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <div class="weui_uploader">
+                                    <div class="weui_uploader_hd weui_cell">
+                                        <div class="weui_cell_bd weui_cell_primary">与公司签订的劳动合同<i class="weui_icon_warn weui_icon_warn_show"></i></div>
+                                    </div>
+                                    <div class="weui_uploader_bd">
+                                        <div class="weui_uploader_input_wrp weui-input-wrap">
+                                            <input class="weui_uploader_input" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <div class="weui_uploader">
+                                    <div class="weui_uploader_hd weui_cell">
+                                        <div class="weui_cell_bd weui_cell_primary">参保信息截图</div>
+                                    </div>
+                                    <div class="weui_uploader_bd">
+                                        <div class="weui_uploader_input_wrp weui-input-wrap">
+                                            <input class="weui_uploader_input" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weui_cells_title">财力信息(以下2选1即可)</div>
+                    <div class="weui_cells weui_cells_form">
+                        <div class="weui_cell">
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <div class="weui_uploader">
+                                    <div class="weui_uploader_hd weui_cell">
+                                        <div class="weui_cell_bd weui_cell_primary">最近一年发放工资的银行流水</div>
+                                    </div>
+                                    <div class="weui_uploader_bd">
+                                        <div class="weui_uploader_input_wrp weui-input-wrap">
+                                            <input class="weui_uploader_input" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <div class="weui_uploader">
+                                    <div class="weui_uploader_hd weui_cell">
+                                        <div class="weui_cell_bd weui_cell_primary">由公司统一提供的财务对帐信息</div>
+                                    </div>
+                                    <div class="weui_uploader_bd">
+                                        <div class="weui_uploader_input_wrp weui-input-wrap">
+                                            <input class="weui_uploader_input" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weui_cells_title">住址信息(以下3选1即可)</div>
+                    <div class="weui_cells weui_cells_form">
+                        <div class="weui_cell">
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <div class="weui_uploader">
+                                    <div class="weui_uploader_hd weui_cell">
+                                        <div class="weui_cell_bd weui_cell_primary">近6个月内的账单信件，并加盖邮戳、显示客户姓名和详细住址</div>
+                                    </div>
+                                    <div class="weui_uploader_bd">
+                                        <div class="weui_uploader_input_wrp weui-input-wrap">
+                                            <input class="weui_uploader_input" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <div class="weui_uploader">
+                                    <div class="weui_uploader_hd weui_cell">
+                                        <div class="weui_cell_bd weui_cell_primary">近6个月内的住房合同，并显示客户姓名和详细住址</div>
+                                    </div>
+                                    <div class="weui_uploader_bd">
+                                        <div class="weui_uploader_input_wrp weui-input-wrap">
+                                            <input class="weui_uploader_input" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <div class="weui_uploader">
+                                    <div class="weui_uploader_hd weui_cell">
+                                        <div class="weui_cell_bd weui_cell_primary">近6个月内的水电费清单，并显示客户姓名和详细住址</div>
+                                    </div>
+                                    <div class="weui_uploader_bd">
+                                        <div class="weui_uploader_input_wrp weui-input-wrap">
+                                            <input class="weui_uploader_input" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weui_cells_title">其它补充信息(金额超过20万需要提供3选1的财力证明)</div>
+                    <div class="weui_cells weui_cells_form">
+                        <div class="weui_cell">
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <div class="weui_uploader">
+                                    <div class="weui_uploader_hd weui_cell">
+                                        <div class="weui_cell_bd weui_cell_primary">车辆行驶证</div>
+                                    </div>
+                                    <div class="weui_uploader_bd">
+                                        <div class="weui_uploader_input_wrp weui-input-wrap">
+                                            <input class="weui_uploader_input" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <div class="weui_uploader">
+                                    <div class="weui_uploader_hd weui_cell">
+                                        <div class="weui_cell_bd weui_cell_primary">房产证明</div>
+                                    </div>
+                                    <div class="weui_uploader_bd">
+                                        <div class="weui_uploader_input_wrp weui-input-wrap">
+                                            <input class="weui_uploader_input" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <div class="weui_uploader">
+                                    <div class="weui_uploader_hd weui_cell">
+                                        <div class="weui_cell_bd weui_cell_primary">股票账户信息</div>
+                                    </div>
+                                    <div class="weui_uploader_bd">
+                                        <div class="weui_uploader_input_wrp weui-input-wrap">
+                                            <input class="weui_uploader_input" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button_sp_area">
+                        <a href="javascript:;" class="weui_btn weui_btn_plain_primary0 pre_step">上一步</a>
+                        <a href="javascript:;" class="weui_btn weui_btn_primary0 commit">提交</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script>
+        var stepSwiper = new Swiper('.step-swiper', {
+            autoHeight: true,
+        });
+        $(function (){
+            //weui 校验,初始化
+            var swiperSlides = $('.swiper-slide');
+            var weui_valid_swiperSlide = [];
+            for(var i=0;i<swiperSlides.size();i++){
+                weui_valid_swiperSlide[i] = weui_valid(swiperSlides.eq(i).find('.weui-input-wrap>input,.weui-select-wrap>select'));
+            }
+
+            /*上一步、下一步、提交*/
+            $('.button_sp_area0>a,.button_sp_area>a').each(function(){
+                var classNames = $(this).attr('class');
+                var slideIndex = Number($(this).parents('.swiper-slide').index());
+                $(this).on('click',{index:slideIndex},function(e){
+                    if(classNames.indexOf("next_step")>0){
+                        //校验
+                        // if(weui_valid_swiperSlide[e.data.index].validResult()){
+                        //     if(e.data.index==0&&weui_valid_swiperSlide[10]){
+                        //         if(!weui_valid_swiperSlide[10].validResult()){
+                        //             return false;
+                        //         }
+                        //     }
+                        //     if(e.data.index==1&&weui_valid_swiperSlide[7]){
+                        //         if(!weui_valid_swiperSlide[7].validResult()){
+                        //             return false;
+                        //         }
+                        //     }
+                        //     if(e.data.index==1&&weui_valid_swiperSlide[8]){
+                        //         if(!weui_valid_swiperSlide[8].validResult()){
+                        //             return false;
+                        //         }
+                        //     }
+                        //     if(e.data.index==2&&weui_valid_swiperSlide[9]){
+                        //         if(!weui_valid_swiperSlide[9].validResult()){
+                        //             return false;
+                        //         }
+                        //     }
+                        //     //下一步
+                        //     stepSwiper.slideTo((e.data.index+1),200,true);
+                        // }
+                        stepSwiper.slideTo((e.data.index+1),200,true);
+                    }else if(classNames.indexOf("pre_step")>0){
+                        //上一步
+                        stepSwiper.slideTo((e.data.index-1),200,true);
+                    }else if(classNames.indexOf("commit")){
+                        //提交
+                        console.log(weui_valid_swiperSlide[e.data.index].validResult())
+                        if(!weui_valid_swiperSlide[e.data.index].validResult()){
+                            return false;
+                        }
+                        /*$.post('#',$('#').serialize(),function(data){
+                            if(data.error == 0){
+                                location.href = '';
+                                return false;
+                            }else{
+                                layer.open({
+                                    content: data.msg,
+                                    time: 2 
+                                });
+                                return false;
+                            }
+                        },"json");*/
+                    } 
+                });
+            });
+            /*姓名同步*/
+            $('#a_user_name').on('blur',function(){
+                $('#a_user_name_0').val(this.value);
+            });
+            /*是否有房产*/
+            $('.house_property_flag input[type="radio"]').on('click',function(){
+                if(this.checked){
+                    var txt = $(this).parents('.weui_check_label').find('.weui_cell_bd>p').text();
+                    var $swiperSlide = $(this).parents('.swiper-slide');
+                    var $swiperWrapper = $('.step-swiper .swiper-wrapper');
+                    var $housePropertyWrap = $('.house_property_wrap');
+
+                    if(txt=='是'){
+                        $swiperWrapper.css('height',$housePropertyWrap.height()+$swiperSlide.height());
+                        $housePropertyWrap.addClass('house_property_wrap_show');
+                        /*房产,添加校验*/
+                        var requiredObjs = $housePropertyWrap.find('input[type="tel"],input[type="text"],input[type="date"],select');
+                        weui_valid_swiperSlide[7] = weui_valid(requiredObjs);
+                        requiredObjs.each(function(){
+                            if(this.tagName=='SELECT'){
+                                $(this).parent().addClass('weui-select-wrap');
+                            }else{
+                                $(this).parent().addClass('weui-input-wrap');
+                            }
+                        });
+                    }else{
+                        if($swiperWrapper.hasClass('house_property_wrap_show')){
+                            $swiperWrapper.css('height',$swiperSlide.height()-$housePropertyWrap.height());
+                            $housePropertyWrap.removeClass('house_property_wrap_show');
+                            weui_valid_swiperSlide[7] = null;
+                        }
+                    }
+                }
+            });
+            /*是否有贷款*/
+            $('.loan_flag input[type="radio"]').on('click',function(){
+                if(this.checked){
+                    var txt = $(this).parents('.weui_check_label').find('.weui_cell_bd>p').text();
+                    var $swiperSlide = $(this).parents('.swiper-slide');
+                    var $swiperWrapper = $('.step-swiper .swiper-wrapper');
+                    var $loanWrap = $('.loan_wrap');
+
+                    if(txt=='是'){
+                        $swiperWrapper.css('height',$loanWrap.height()+$swiperSlide.height());
+                        $loanWrap.addClass('loan_wrap_show');
+                        /*贷款,添加校验*/
+                        var requiredObjs = $loanWrap.find('input[type="tel"],input[type="text"],input[type="date"],select');
+                        weui_valid_swiperSlide[8] = weui_valid(requiredObjs);
+                        requiredObjs.each(function(){
+                            if(this.tagName=='SELECT'){
+                                $(this).parent().addClass('weui-select-wrap');
+                            }else{
+                                $(this).parent().addClass('weui-input-wrap');
+                            }
+                        });
+                    }else{
+                        if($loanWrap.hasClass('loan_wrap_show')){
+                            $swiperWrapper.css('height',$swiperSlide.height()-$loanWrap.height());
+                            $loanWrap.removeClass('loan_wrap_show');
+                            weui_valid_swiperSlide[8] = null;
+                        }
+                    }
+                }
+            });
+            /*是否已婚*/
+            $('.married_flag select').on('change',function(){
+                var $swiperSlide = $(this).parents('.swiper-slide');
+                var $swiperWrapper = $('.step-swiper .swiper-wrapper');
+                var $marriedWrap = $('.married_wrap');
+                //console.log(this.options[this.selectedIndex].value);
+                if(this.options[this.selectedIndex].text=="已婚"){
+                    //$swiperWrapper.css('height',$swiperSlide.height()+$marriedWrap.height());
+                    $marriedWrap.addClass('married_wrap_show');
+                    /*已婚,添加校验*/
+                    var requiredObjs = $marriedWrap.find('.married_required_wrap').find('input[type="tel"],input[type="text"],input[type="date"],select');
+                    weui_valid_swiperSlide[9] = weui_valid(requiredObjs);
+                    requiredObjs.each(function(){
+                        if(this.tagName=='SELECT'){
+                            $(this).parent().addClass('weui-select-wrap');
+                        }else{
+                            $(this).parent().addClass('weui-input-wrap');
+                        }
+                    });
+                }else{
+                    if($marriedWrap.hasClass('married_wrap_show')){
+                        //$swiperWrapper.css('height',$swiperSlide.height()-$marriedWrap.height());
+                        $marriedWrap.removeClass('married_wrap_show');
+                        weui_valid_swiperSlide[9] = null;
+                    }
+                }
+            });
+            /*身份证有效期*/
+            $('.valid_date_flag select').on('change',function(){
+                var $swiperSlide = $(this).parents('.swiper-slide');
+                var $swiperWrapper = $('.step-swiper .swiper-wrapper');
+                var $validDateWrap = $('.valid_date_wrap');
+                //console.log(this.options[this.selectedIndex].value);
+                if(this.options[this.selectedIndex].text=="有效期"){
+                    $swiperWrapper.css('height',$swiperSlide.height()+$validDateWrap.height());
+                    $validDateWrap.addClass('valid_date_wrap_show');
+                    /*身份证有效期,添加校验*/
+                    var requiredObjs = $validDateWrap.find('input[type="tel"],input[type="text"],input[type="date"],select');
+                    weui_valid_swiperSlide[10] = weui_valid(requiredObjs);
+                    requiredObjs.each(function(){
+                        if(this.tagName=='SELECT'){
+                            $(this).parent().addClass('weui-select-wrap');
+                        }else{
+                            $(this).parent().addClass('weui-input-wrap');
+                        }
+                    });
+                }else{
+                    if($validDateWrap.hasClass('valid_date_wrap_show')){
+                        $swiperWrapper.css('height',$swiperSlide.height()-$validDateWrap.height());
+                        $validDateWrap.removeClass('valid_date_wrap_show');
+                        weui_valid_swiperSlide[10] = null;
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

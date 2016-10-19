@@ -1,0 +1,33 @@
+/*weui 校验*/
+.weui_toptips{transition: top 0.5s;display: block;top:-46px;z-index: 10;line-height: 3.3;}
+.weui_toptips_show{top:0;}
+.weui_icon{display: none;position: absolute;right:0;top: 0;z-index:2;padding: 0 6px;}
+.weui_cells_form .weui_icon_warn_show{display: inline-block;}
+.weui_cells_form .weui_icon_clear_show{display: inline-block;}
+.weui_icon_warn:before,.weui_icon_clear:before {font-size: 20px;}
+.weui-input-wrap{display: inline-block;position: relative;}
+.weui-select-wrap{display: inline-block;position: relative;}
+.weui-select-wrap .weui_icon{right: 20px;top: 12px;}
+.weui_uploader .weui_icon{}
+
+.weui_cells_form{font-size: 14px;}
+.weui_cells_form .weui_cell:before{z-index: 2;}
+.weui_cells_form .weui_label{width: 80px;}
+.weui_cells_form .pw-img-wrap{width: 86px;padding: 12px 0;}
+.weui_cells_form .pw-img-wrap>img{width: 40%;height: 20px;margin: 0 auto;display: block;}
+.weui_cells_form .qrcode-btn-wrap{position: relative;width: 86px;}
+.weui_cells_form .qrcode-btn-wrap:before{content: "";display: block;width: 1px;height: 100%;background-color: #d9d9d9;position: absolute;left: 0;transform: scaleX(0.5);-webkit-transform: scaleX(0.5);}
+.weui_cells_form .qrcode-btn{display: block;text-align: center;height: 40px;line-height: 40px;color: #0aaefd;background: #fff;width: 100%;border: 0;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-appearance: none;outline: none;}
+.weui_cells_form .weui_cell_select{padding:0 0 0 15px;}
+.weui_cells_form .weui_input{padding: 0 0 0 15px;}
+.weui_cells_form .weui_cells_checkbox>label{float: left;padding:0;}
+.weui_cells_form .weui_cells_checkbox .weui_check_label{padding:0 0 0 15px;}
+.weui_cells_form .weui_cells_checkbox .weui_cell:before{content: none;}
+.weui_cells_form .weui_cell_ft{font-size: 14px}
+
+.weui_btn_blue{background-color:#0aaefd;color: #fff;font-size: 16px;}
+.weui_btn_blue:active,.weui_btn_blue:visited{background-color:#0aaee0;}
+.reg_p{}
+.reg_p .reg_p_a{color: #0aaefd;}
+

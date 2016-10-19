@@ -1,0 +1,270 @@
+@charset "utf-8";
+*{margin: 0;padding: 0; list-style:none; border:0px; outline:none;}
+html {-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; height:100%;}
+body {font-family:"微软雅黑","黑体",Arial, Helvetica, sans-serif;font-size: 14px; background:#eaeaea;}
+a {color: #606060;text-decoration: none;}
+a:hover {text-decoration: none;}
+img{border:none 0;}
+input:- webkit-autofill { -webkit-box-shadow: 0 0 0 1000px white inset; } 
+/*顶部*/
+.top{width:94%; padding:0 3%; height:45px; line-height:45px; background:#0aaefd; text-align:center; font-size:18px; color:#fff; position:fixed; left:0; top:0; z-index:10;}
+.top_a{ display:inline-block; height:45px; width:25px; position:absolute; left:3%;}
+.top_a_img{width:12px; margin-top:12px;}
+
+/*底部*/
+.footer{ background:#fff; width:100%; height:54px; position:fixed; bottom:0;margin-bottom:0px;}
+
+
+.foot_ul{width:100%;}
+.foot_li{ width:50%; float:left;}
+.foot_li_a{width:100%; margin-top:-10px;display:inline-block; text-align:center; color:#666666;}
+.foot_li_a0{ color:#0aaefd;}
+.foot_li_a_img{ display:block; margin:10px auto 2px auto; width:30px; }
+
+/*公共*/
+.con{width:100%; position:absolute;top:45px; left:0;padding-bottom:60px;height:80%;-webkit-overflow-scrolling: touch;}
+input[type="button"], input[type="submit"], input[type="reset"] {-webkit-tap-highlight-color: rgba(0, 0, 0, 0);-webkit-appearance: none;}
+input:focus {outline: none;}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #bcbcbc; font-size:14px;}
+input:-moz-placeholder, textarea:-moz-placeholder {color:#bcbcbc; font-size:14px;}
+input::-moz-placeholder, textarea::-moz-placeholder {color:#bcbcbc; font-size:14px;}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {color:#bcbcbc; font-size:14px;}
+label.error{color:#ff3300; font-size:12px;}
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button { -webkit-appearance: none;}
+input[type="number"]{-moz-appearance: textfield;}
+
+/*按钮*/
+.btn1{ display:block; width:90%; height:44px; margin:5px 5%; text-align:center; line-height:44px; background:#0aaefd; border-radius:5px; color:#fff; font-size:16px;}
+.btn2{ display:block; width:90%; height:45px; margin:10px 5%; text-align:center; line-height:45px; background:#bcbcbc; border-radius:5px; color:#fff; font-size:16px;}
+.btn3{ display:block; width:90%; height:43px; margin:10px 5%; text-align:center; line-height:43px; background:#fff; border-radius:5px; color:#0aaefd; font-size:16px; border:1px solid #0aaefd;}
+.con_ul1{width:100%;}
+.con_ul1_li0{ width:100%; height:15px;}
+.con_ul1_li1{ width:90%; padding:0 5%; height:50px; line-height:50px; background:#fff; margin-bottom:1px; position:relative;}
+.con_ul1_li2{ width:90%; padding:0 5%; height:50px; line-height:50px; }
+.con_ul1_li1_span{width:20%; display:inline-block; font-size:14px;}
+.con_ul1_li2_a{ float:right; font-size:14px; color:#0aaefd;}
+
+/*注册*/
+.reg_p{ color:#808080; font-size:14px;}
+.reg_p_a{ color:#0aaefd;}
+.reg_ul1_li1_span{width:25%; display:inline-block; font-size:14px;}
+.reg_ul1_li1_span2{ position:absolute; right:3%; display:inline-block; width:30px; height:50px; }
+.text_empty1,.text_empty2{width:20px; margin-top:15px; margin-left:-8px; display:none; cursor:pointer;}
+.passshow{width:30px; margin-top:15px;}
+
+.reg_p1{color:#414141; margin:7px 0;}
+.reg_p2{color:#6f6f6f; text-indent:25px;}
+.reg_p3{color:#6f6f6f; text-align:right;}
+
+
+
+
+
+/*注册成功*/
+.reg_success_p{width:100%; font-size:16px; color:#333333; text-align:center; margin-bottom:30px;}
+.reg_success_img{width:60px; display:block; margin:30px auto 10px auto;}
+.agreement{height:300px; overflow:auto; font-size:12px; font-family:"微软雅黑"; text-align:left;}
+
+/*首页*/
+.home_top{width:100%; margin-bottom:10px;}
+.home_con{ width:100%; height:170px; background:#0aaefd;}
+.home_con_p1{ text-align:center; height:35px; line-height:35px; padding-top:15px; color:#fff; font-size:16px;}
+.home_con_p2{ text-align:center; color:#fff; font-size:40px; height:45px; line-height:45px; margin-bottom:10px;}
+.home_con_a{ width:150px; height:45px; display:block; margin:0 auto; text-align:center; line-height:45px; background:#fff; border-radius:30px; font-size:16px; color:#0aaefd;box-shadow:0 3px 2px rgba(100, 100, 100, 0.5);}
+.home_dia_p{ height:35px; line-height:35px; margin-top:8px; font-size:32px; color:#ff9900; font-family:"微软雅黑";}
+.home_dia_p span{ font-size:24px;}
+.layermcont{ font-family:"微软雅黑";}
+.layermbtn span:first-child{ font-family:"微软雅黑"; font-size:16px; color:#0aaefd;}
+.home_ul{width:100%; height:80px; padding:10px 0; overflow:hidden; background:#fff;}
+.home_li{ width:33.3%; float:left; height:80px; background:#fff;}
+.home_li:first-child{ background:#fff url(../images/home_dian.png) no-repeat right center; background-size:1px 50px;}
+.home_li:last-child{ background:#fff url(../images/home_dian.png)  no-repeat left center; background-size:1px 50px;}
+.home_li_a{width:100%; display:inline-block; text-align:center; padding-bottom:5px; color:#808080;}
+.home_li_a_img{width:35px; display:block; margin:15px auto 5px auto;}
+
+
+/*借款-申请*/
+.loan_app1_ps{height: 35px;line-height: 35px;position: fixed;bottom: 54px;left: 5%;display: block;padding-left: 16px;background: url(../images/loan_application1_ps_img.png) no-repeat 0 center;background-size: 14px;color: #808080;font-size: 13px;}
+.loan1_li1_span{width:25%; display:inline-block; font-size:14px; float:left;}
+.loan1_li1_span2{ height:50px; line-height:50px; font-size:14px; color:#808080; display:inline-block; float:right;}
+.loan_app1_li0{ height:40px; line-height:40px; color:#808080; padding-left:30px; font-size:12px; background:url(../images/loan_application1_img02.png) no-repeat 10px center; background-size:17px;}
+.loan_null_p{width: 100%;position: absolute;top: 50%;margin-top: -44px;height: 88px;}
+.loan_null_p img{ width:120px; display:block; margin:0 auto;}
+
+
+/*借款-申请已提交*/
+.loan2{width:100%; height:170px; background:#fff; padding:20px 0 5px 0;}
+.loan2_p{ font-size:15px; color:#202020; line-height:23px; text-align:center;}
+.loan2_span{width:60px; height:60px; display:block; line-height:60px; text-align:center; color:#ff9900; border-radius:50%; border:5px solid #ff9900; margin:10px auto;}
+.loan2_img{ display:block; margin:20px auto 10px auto; width:150px;}
+.loan2_p2{width:100%; text-align:center; line-height:21px; color:#202020; font-size:14px; padding-bottom:20px;}
+/*借款攻略*/
+.raiders_img{width:100%;}
+.raiders_img2{width:230px; display:block; margin:0 auto;}
+
+/*费率查询*/
+.rate_li{ display:none;}
+.rate_con{width:80%; margin:0 auto; background:#fff; height:135px; padding:25px 5% 15px 5%; color:#202020;}
+.rate_con_p1{ margin-bottom:7px; font-size:14px;}
+.rate_con_span1,.rate_con_span2,.rate_con_span3{ color:#0aaefd; font-size:14px;}
+.rate_con_p2{ color:#808080; font-size:14px; padding-left:25px; background:url(../images/loan_application1_img02.png) no-repeat left 12px; background-size:18px; border-top:1px solid #dadada; padding-top:10px;}
+
+/*额度测算结果-不符合*/
+.expe_img{width:70px; height:70px; display:block; margin:50px auto 15px auto;}
+.expe_p{ font-size:16px; color:#202020; line-height:25px; text-align:center; margin-bottom:30px;}
+
+/*额度测算结果-符合*/
+.exp2_con{width:100%; height:130px; background:#0aaefd;margin: 20px 0 0;}
+.exp2_p1,.exp2_p2{ color:#fff; text-align:center;}
+.exp2_p1{ font-size:16px; height:40px; line-height:60px;}
+.exp2_p2{ font-size:40px;}
+.exp2_con2{width:100%; height:40px;}
+.exp2_span{ float:right; color:#808080; font-size:12px; display:block; height:35px; line-height:35px; padding-left:20px; background:url(../images/loan_application1_img02.png) no-repeat left center ; background-size:15px; margin-right:5%;}
+
+/*查看借款所需资料*/
+.info_ul{width:100%; background:#fff;height:780px}
+.info_title{width:92%; padding:0 4%; height:34px; line-height:34px; font-size:12px; color:#808080; background:#eaeaea;}
+.info_title:last-child{height: 54px;}
+.info_li1{ border-bottom:1px solid #eaeaea; width:82%; margin:0 4%; padding:0 5%; height:34px; line-height:34px; background: url(../images/info_li1_bg.png) no-repeat 95% center; background-size:15px; color:#202020; font-size:14px;}
+.info_li2{ border-bottom:1px solid #eaeaea; width:75%; margin:0 4%; padding:6px 12% 6px 5%;background: url(../images/info_li1_bg.png) no-repeat 95% center; background-size:15px; color:#202020; font-size:14px;}
+
+.info_li0{ border-bottom:0;}
+
+/*额度测算*/
+.exp_ps1{height:35px; line-height:35px; padding-left:30px; color:#808080; background:url(../images/loan_application1_img02.png) no-repeat 10px center; background-size:15px; font-size:12px; border-bottom:1px solid #dadada;}
+.exp_ps2{height: 35px;line-height: 35px;padding-left: 20px;color: #808080;background: url(../images/loan_application1_ps_img.png) no-repeat 0 center;background-size: 15px;font-size: 12px;margin: 0 5%;}
+.exp_title{width:90%; padding:0 5%; font-size:14px; color:#808080; height:40px; line-height:40px;}
+
+/*404*/
+.error_img{width:100%;}
+.error_p{ text-align:center; font-size:14px; color:#808080;}
+.error_a{ font-size:14px; color:#555555; width:100px; height:35px; line-height:35px; text-align:center; margin:35px auto 0 auto; display:block; border:1px solid #bcbcbc; border-radius:6px;}
+
+/*个人信息*/
+.myinfio_span{ float:right; color:#808080; display:block; width:78%; text-align:right;overflow:hidden;white-space:nowrap;-o-text-overflow: ellipsis;text-overflow:ellipsis;}
+
+/*我的设置*/
+.set_ul{wdith:100%;}
+.set_li{ margin-bottom:10px; width:90%; padding:0 5%; height:45px;background:#fff url(../images/set_li_bg.png) no-repeat 95% center; background-size:10px;}
+.set_li_a{ display:inline-block; height:45px; line-height:45px; padding-left:8%; width:92%;}
+.set_li_a1{ background:url(../images/set_li_a_bg1.png) no-repeat left center; background-size:15px;}
+.set_li_a2{ background:url(../images/set_li_a_bg2.png) no-repeat left center; background-size:18px;}
+
+/*个人中心*/
+.user_top{width:100%;height:160px; position:relative;}
+.user_top_img1{width:100%; position:absolute; left:0; top:0; z-index:0;height:160px;}
+.user_top_img2{width:80px; position:absolute; left:50%; top:15px; z-index:1; margin-left:-40px;}
+.user_top_span{ display:inline-block; width:50%;position:absolute; left:50%; top:98px; z-index:1; margin-left:-25%; text-align:center; color:#fff; font-size:18px;}
+.user_ul{width:100%; background:#fff;}
+.user_li{ width:100%;height:42px;position: relative;}
+.user_li:before {content: " ";position: absolute;left: 0;top: 0;width: 100%;height: 1px;border-top: 1px solid #D9D9D9;color: #D9D9D9;-webkit-transform-origin: 0 0;transform-origin: 0 0;-webkit-transform: scaleY(0.5);transform: scaleY(0.5);}
+.user_li:after {content: " ";position: absolute;left: 0;bottom: 0;width: 100%;height: 1px;border-bottom: 1px solid #D9D9D9;color: #D9D9D9;-webkit-transform-origin: 0 100%;transform-origin: 0 100%;-webkit-transform: scaleY(0.5);transform: scaleY(0.5);}
+.user_li0{ height:20px; width:100%; background:#eaeaea;}
+.user_li_a{ display:inline-block;width:80%;padding:0 0 0 7%; height:42px; line-height:42px;margin-left:5%;  }
+.user_li_a2{border-bottom:none; }
+.user_li1{ background:url(../images/user_li1.png) no-repeat 5% center; background-size:20px;}
+.user_li2{ background:url(../images/user_li2.png) no-repeat 5% center; background-size:20px;}
+.user_li3{ background:url(../images/user_li3.png) no-repeat 5% center; background-size:20px;}
+.user_li4{ background:url(../images/user_li4.png) no-repeat 5% center; background-size:20px;}
+.weui_right_arrow:after {content: " ";display: inline-block;-webkit-transform: rotate(45deg);transform: rotate(45deg);height: 6px;width: 6px;border-width: 2px 2px 0 0;border-color: #C8C8CD;border-style: solid;position: relative;top: -1px;}
+
+/*我的-借款计划、还款计划*/
+.loan{ width:90%; margin:15px auto 0 auto; border-top:2px solid #0aaefd; background:#ffffff url(../images/loan_bg.png) repeat-x bottom left; padding-bottom:5px; overflow:hidden;}
+.loan_li_title{ height:35px; line-height:35px; text-align:center; width:100%; border-bottom:1px solid #dadada; color:#202020; margin-bottom:5px;}
+.loan ul{padding: 0 10px; display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-box-align: center;-webkit-align-items: center;-ms-flex-align: center;align-items: center;}
+.loan ul>li{-webkit-box-flex: 1;-webkit-flex: 1;-ms-flex: 1;flex: 1;height:60px; padding:10px 0; text-align:center; color:#808080; font-size:12px;}
+.loan ul>li:last-child{flex:0;}
+.loan_li1{background:url(../images/home_dian.png) no-repeat right center; background-size:auto 50%; }
+.loan ul>li>p:last-child{margin-top:15px;font-size:14px;}
+.loan_li_span1{ color:#0aaefd;}
+.loan_li_span2{ color:#ff9900;}
+.loan_li_span3{ color:#202020;}
+.loan ul>li>img{width: 8px;height: 14px;margin: 18px 0;}
+
+
+/*关于我们*/
+.about_top{ width:100%;}
+.about_con1{ background:#fff; width:90%; padding:0 5%; margin:5px 0 0 0; overflow:hidden;}
+.about_con2{ background:#fff; width:90%; padding:10px 5%; margin-top:10px; font-size:12px; line-height:22px; color:#666666;}
+.about_con2_span{ color:#06a2ed;}
+.about_h3{ height:40px; line-height:40px; border-bottom:1px solid #dadada;}
+.about_h3_span{ height:15px; line-height:15px; display:inline-block; padding:0 5px; border-left:3px solid #05a0ea; color:#202020; font-size:16px; font-weight:normal;}
+.about_p1{ font-size:12px; color:#666666; line-height:22px; margin-top:10px;}
+.about_p2{ font-size:12px; color:#666666; line-height:22px; margin-top:5px; margin-bottom:15px;}
+
+/*申请借款--佰仟员工专属通道*/
+.path_p1{ height:40px; line-height:40px; width:90%; padding:0 5%; font-size:16px; color:#808080;}
+.path_a{width:100%; display:block; margin-bottom:10px;}
+.path_a_img{ width:100%; margin-bottom:-5px;}
+.tanhao_img{ position:absolute; left:35px; top:18px; display:block; width:15px;}
+.tanhao_con{width:100%; text-align:center; line-height:50px; padding-bottom:35px;}
+.tanhao_p1{ border-bottom:1px solid #e7ebef; width:70%; margin:15px auto; color:#c7c7c7;}
+.tanhao_p2{ line-height:24px; color:#313232;}
+.tanhao_a{width:70%; height:40px; line-height:40px; display:block; margin:30px 0 0 15%; border-radius:5px; color:#fff; background:#0aaefd;}
+
+/*我的-还款计划详情*/
+.p_header{position: relative;background-color: #fff;height: 40px;padding: 0 10px;font-size: 12px;color: #808080;}
+.p_header .p_line{position: absolute;height: 1px;background-color:#eaeaea;width:93.75%;top:20px;left: 10px; }
+.p_header .p_h_cont{position: absolute;width: 112px;height: 18px;line-height: 18px;background-color: #fff;top:20px;left: 50%;margin: -8px 0 0 -56px;text-align:center;}
+.p_header .p_h_cont .p_done{color: #0aaefd;}
+.p_header .p_h_cont .p_un_done{color: #ff9900;}
+.p_table{background-color: #fff;font-size: 12px;color: #808080;margin: 10px;padding: 5px 0 0 0;}
+.p_table table{width:90%;text-align: center;margin: 0 auto;border-collapse: collapse;border-spacing: 0;}
+.p_table table tr{}
+.p_table table th{padding: 8px 0;font-weight: normal;}
+.p_table table td{padding: 9px 0;border-top: 1px solid #dadada;}
+.p_table table td:first-child{text-align:left;padding: 0 0 0 4px;}
+.p_table table tr.p_wait{color: #202020;}
+.p_table table tr.p_wait td:last-child{color: #ff9900;}
+
+/*进度查询*/
+.c_header{font-size:12px;padding:12px;overflow: auto;color: #808080;background-color: #fff;}
+.c_header>img{width:50px;height:50px;float:left;}
+.c_header .c_info{float: left;margin: 0 0 0 16px;}
+.c_header .c_info .c_line2{margin: 7px 0 8px 0;}
+.c_header .c_contact{float: right;}
+.c_header .c_contact img{width:20px;height:20px;display: block;margin: 6px auto;}
+.c_header .c_contact p{color: #0aaefd;}
+
+.c_h_title{font-size:12px;line-height: 40px;background-color:#eaeaea;padding: 0 0 0 3%;color:#808080;}
+.c_h_process{font-size:12px;padding:25px 20px 3px 36px;box-sizing: border-box;border-top:1px solid #eee;color:#808080;overflow: auto;background-color: #fff;}
+.c_h_process ul{}
+.c_h_process ul li{position:relative;padding: 0 0 24px 0;float: left;width: 100%;border-left: 2px solid #ddd;}
+.c_h_process ul li:last-child{border:none;margin: 0 0 0 2px;padding: 0;}
+.c_h_process ul li:last-child .info{border:none;}
+.c_h_process ul li:last-child.active{border:none;margin: 0 0 0 2px;}
+.c_h_process ul li .bullet{width:32px;height:32px;border-radius:100%;position:absolute;left: -19px;top: -9px;color: #dadada;text-align:center;line-height:32px;background-color: #fff;border: 2px solid #dadada;}
+.c_h_process ul li.active{color:#0aaefd;border-left: 2px solid #0aaefd;}
+.c_h_process ul li:last-child.active .info{border:none;}
+.c_h_process ul li.active .bullet{background-color:#0aaefd;border:2px solid #0aaefd;color: #fff;}
+.c_h_process ul li .canceled{line-height: 15px;}
+.c_h_process ul li .canceled>p:first-child{margin: 3px 0 -2px 0;}
+.c_h_process ul li.active .canceled{line-height: 15px;}
+.c_h_process ul li .info{padding:0 0 20px 0;border-bottom:1px solid #fff;margin-left:25px;}
+.c_h_process ul li.active .info{border-bottom:1px solid #eee;}
+.c_h_process ul li .info>p{height:20px;}
+
+/*申请乐业分期，已提交*/
+.a_header{font-size:12px;text-align: center;color:#202020;background-color: #fff;padding: 0 0 15px 0;}
+.a_header img{width: 140px;height: 140px;margin: 17px auto 9px auto;}
+.a_header p{margin: 6px 0 0 0;}
+.a_header .c_h_btn{font-size:16px;background-color:#0aaefd;color: #fff;border-radius:5px;width:94%;line-height: 43px;height: 43px;margin: 15px auto 0; }
+
+/*额度测算计算器、还款计算器*/
+.cal_container{padding-bottom:15px; }
+.cal_container .weui_cells{font-size: 14px;}
+.cal_container .weui_cells_title{background-color: #eeeef1;padding-top: .77em;padding-bottom: .3em;margin: 0;}
+.cal_container .weui_cell_select{padding: 2px 15px;}
+.cal_container .weui_input {padding: 0 0 0 11px;}
+.cal_container .weui_cells_tips {font-size: 12px;}
+.cal_container .weui_cells_tips>span{margin: 2px 0 0 2px;display: inline-block;vertical-align: middle;}
+.cal_container .weui_cells_tips>i{font-size: 10px;}
+.cal_container .weui_cells_checkbox>label{float: left;padding:0;}
+.cal_container .weui_cells_checkbox .weui_check_label{padding:0 0 0 18px;}
+.cal_container .weui_cells_checkbox .weui_cell:before{content: none;}
+.cal_container .weui_cells_form  .weui_cell_ft{font-size: 14px}
+.cal_container .weui_label{display: block;width: 80px;word-wrap: break-word;word-break: break-all;}
+.cal_container .weui_cells_form .weui_icon_warn_show{display: block;margin-right: 2px;}
+.cal_container .weui_icon_warn:before {font-size: 16px;}
+.cal_container .weui_btn_primary {background-color: #0aaefd;}
+.cal_container .weui_btn_primary:active {background-color: #0aaefd;}

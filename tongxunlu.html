@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>详情页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/slidernav.css"/>
+    <link rel="stylesheet" href="css/iscroll.css"/>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/slidernav.js"></script>
+    <script type="text/javascript" src="js/iscroll.js"></script>
+    <style>
+        /* The following styles are used only for this page - the actual plugin styles are in slidernav.css */
+        * { margin: 0; padding: 0; }
+        body {background: #fff; font-family: Verdana, Arial; font-size: 12px; line-height: 18px; }
+        a { text-decoration: none; }
+        h2, h3 { margin: 0 0 20px; text-shadow: 2px 2px #fff; }
+        h2 { font-size: 28px; }
+        h3 { font-size: 22px; }
+        pre { background: #fff; width: 460px; padding: 10px 20px; border-left: 5px solid #ccc; margin: 0 0 20px; }
+        p { width: 500px; font-size: 18px; line-height: 24px; margin: 0 0 30px; }
+
+        .div-select{width: 130px;height: 25px;line-height: 25px;margin-left: 4px;color: #202020;font-size: 14px;font-family: "微软雅黑";border: 1px solid #eee;position: relative;}
+        .div-select:after{    content: " ";display: inline-block;-webkit-transform: rotate(45deg);transform: rotate(45deg);height: 6px;width: 6px;border-width: 0 2px 2px 0;border-color: #c8c8cd;border-style: solid;position: relative;top: -2px;position: absolute;top: 50%;right: 10px;margin-top: -6px;}
+    </style>
+    <script type="text/javascript">
+        var scroll1,scroll2;
+        function loaded() {
+            var slider = new IScroll('#slider', {
+                probeType: 3,
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,click:true
+            });
+            return slider;
+        }
+        function loaded2() {
+            var slider = new IScroll('.search-result', {
+                probeType: 3,
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true,click:true
+            });
+            return slider;
+        }
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    </script>
+</head>
+<body>
+    <div class="div-select"></div>
+    <div class="tongxunlu">
+        <div class="weui_search_bar" id="search_bar">
+            <div class="back-btn"></div>
+            <form class="weui_search_outer">
+                <div class="weui_search_inner">
+                    <i class="weui_icon_search"></i>
+                    <input type="search" class="weui_search_input" id="search_input" placeholder="搜索" required="">
+                    <a href="javascript:" class="weui_icon_clear" id="search_clear"></a>
+                </div>
+                <label for="search_input" class="weui_search_text" id="search_text">
+                    <i class="weui_icon_search"></i>
+                    <span>搜索</span>
+                </label>
+            </form>
+            <a href="javascript:" class="weui_search_cancel" id="search_cancel">取消</a>
+        </div>
+        <div id="slider">
+            <ul class="slider-content">
+                <li id="a"><a name="a" class="title">A</a>
+                    <ul>
+                        <li><a href="#">Adam</a></li>
+                        <li><a href="#">Alex</a></li>
+                        <li><a href="#">Ali</a></li>
+                        <li><a href="#">Apple</a></li>
+                        <li><a href="#">Arthur</a></li>
+                        <li><a href="#">Ashley</a></li>
+                    </ul>
+                </li>
+                <li id="b"><a name="b" class="title">B</a>
+                    <ul>
+                        <li><a href="#">Barry</a></li>
+                        <li><a href="#">Becky</a></li>
+                        <li><a href="#">Biff</a></li>
+                        <li><a href="#">Billy</a></li>
+                        <li><a href="#">Bozarking</a></li>
+                        <li><a href="#">Bryan</a></li>
+                    </ul>
+                </li>
+                <li id="c"><a name="c" class="title">c</a>
+                    <ul>
+                        <li><a href="#">Calista</a></li>
+                        <li><a href="#">Cathy</a></li>
+                        <li><a href="#">Chris</a></li>
+                        <li><a href="#">Cinderella</a></li>
+                        <li><a href="#">Corky</a></li>
+                        <li><a href="#">Cypher</a></li>
+                    </ul>
+                </li>
+                <li id="d"><a name="d" class="title">d</a>
+                    <ul>
+                        <li><a href="#">Damien</a></li>
+                        <li><a href="#">Danny</a></li>
+                        <li><a href="#">Denver</a></li>
+                        <li><a href="#">Devon</a></li>
+                        <li><a href="#">Doug</a></li>
+                        <li><a href="#">Dustin</a></li>
+                    </ul>
+                </li>
+                <li id="e"><a name="e" class="title">E</a>
+                    <ul>
+                        <li><a href="#">Earry</a></li>
+                        <li><a href="#">Eecky</a></li>
+                        <li><a href="#">Eiff</a></li>
+                        <li><a href="#">Eilly</a></li>
+                        <li><a href="#">Eozarking</a></li>
+                        <li><a href="#">Eryan</a></li>
+                    </ul>
+                </li>
+                <li id="f"><a name="f" class="title">f</a>
+                    <ul>
+                        <li><a href="#">Falista</a></li>
+                        <li><a href="#">Fathy</a></li>
+                        <li><a href="#">Fhris</a></li>
+                        <li><a href="#">Finderella</a></li>
+                        <li><a href="#">Forky</a></li>
+                        <li><a href="#">Fypher</a></li>
+                    </ul>
+                </li>
+                <li id="g"><a name="g" class="title">g</a>
+                    <ul>
+                        <li><a href="#">Gamien</a></li>
+                        <li><a href="#">Ganny</a></li>
+                        <li><a href="#">Genver</a></li>
+                        <li><a href="#">Gevon</a></li>
+                        <li><a href="#">Goug</a></li>
+                        <li><a href="#">Gustin</a></li>
+                    </ul>
+                </li>
+                <li id="h"><a name="h" class="title">h</a>
+                    <ul>
+                        <li><a href="#">Harry</a></li>
+                        <li><a href="#">Hecky</a></li>
+                        <li><a href="#">Hiff</a></li>
+                        <li><a href="#">Hilly</a></li>
+                        <li><a href="#">Hozarking</a></li>
+                        <li><a href="#">Hryan</a></li>
+                    </ul>
+                </li>
+                <li id="i"><a name="i" class="title">i</a>
+                    <ul>
+                        <li><a href="#">Ialista</a></li>
+                        <li><a href="#">Iathy</a></li>
+                        <li><a href="#">Ihris</a></li>
+                        <li><a href="#">Iinderella</a></li>
+                        <li><a href="#">Iorky</a></li>
+                        <li><a href="#">Iypher</a></li>
+                    </ul>
+                </li>
+                <li id="j"><a name="j" class="title">j</a>
+                    <ul>
+                        <li><a href="#">Jamien</a></li>
+                        <li><a href="#">Janny</a></li>
+                        <li><a href="#">Jenver</a></li>
+                        <li><a href="#">Jevon</a></li>
+                        <li><a href="#">Joug</a></li>
+                        <li><a href="#">Justin</a></li>
+                    </ul>
+                </li>
+                <li id="k"><a name="k" class="title">k</a>
+                    <ul>
+                        <li><a href="#">Karry</a></li>
+                        <li><a href="#">Kecky</a></li>
+                        <li><a href="#">Kiff</a></li>
+                        <li><a href="#">Killy</a></li>
+                        <li><a href="#">Kozarking</a></li>
+                        <li><a href="#">Kryan</a></li>
+                    </ul>
+                </li>
+                <li id="l"><a name="l" class="title">l</a>
+                    <ul>
+                        <li><a href="#">Lalista</a></li>
+                        <li><a href="#">Lathy</a></li>
+                        <li><a href="#">Lhris</a></li>
+                        <li><a href="#">Linderella</a></li>
+                        <li><a href="#">Lorky</a></li>
+                        <li><a href="#">Lypher</a></li>
+                    </ul>
+                </li>
+                <li id="m"><a name="m" class="title">m</a>
+                    <ul>
+                        <li><a href="#">Mamien</a></li>
+                        <li><a href="#">Manny</a></li>
+                        <li><a href="#">Menver</a></li>
+                        <li><a href="#">Mevon</a></li>
+                        <li><a href="#">Moug</a></li>
+                        <li><a href="#">Mustin</a></li>
+                    </ul>
+                </li>
+                <li id="n"><a name="n" class="title">n</a>
+                    <ul>
+                        <li><a href="#">Namien</a></li>
+                        <li><a href="#">Nanny</a></li>
+                        <li><a href="#">Nenver</a></li>
+                        <li><a href="#">Nevon</a></li>
+                        <li><a href="#">Noug</a></li>
+                        <li><a href="#">Nustin</a></li>
+                    </ul>
+                </li>
+                <li id="o"><a name="o" class="title">o</a>
+                    <ul>
+                        <li><a href="#">Oamien</a></li>
+                        <li><a href="#">Oanny</a></li>
+                        <li><a href="#">Oenver</a></li>
+                        <li><a href="#">Oevon</a></li>
+                        <li><a href="#">Ooug</a></li>
+                        <li><a href="#">Oustin</a></li>
+                    </ul>
+                </li>
+                <li id="p"><a name="p" class="title">p</a>
+                    <ul>
+                        <li><a href="#">Parry</a></li>
+                        <li><a href="#">Pecky</a></li>
+                        <li><a href="#">Piff</a></li>
+                        <li><a href="#">Pilly</a></li>
+                        <li><a href="#">Pozarking</a></li>
+                        <li><a href="#">Pryan</a></li>
+                    </ul>
+                </li>
+                <li id="q"><a name="q" class="title">q</a>
+                    <ul>
+                        <li><a href="#">Qalista</a></li>
+                        <li><a href="#">Qathy</a></li>
+                        <li><a href="#">Qhris</a></li>
+                        <li><a href="#">Qinderella</a></li>
+                        <li><a href="#">Qorky</a></li>
+                        <li><a href="#">Qypher</a></li>
+                    </ul>
+                </li>
+                <li id="r"><a name="r" class="title">r</a>
+                    <ul>
+                        <li><a href="#">Ramien</a></li>
+                        <li><a href="#">Ranny</a></li>
+                        <li><a href="#">Renver</a></li>
+                        <li><a href="#">Revon</a></li>
+                        <li><a href="#">Roug</a></li>
+                        <li><a href="#">Rustin</a></li>
+                    </ul>
+                </li>
+                <li id="s"><a name="s" class="title">s</a>
+                    <ul>
+                        <li><a href="#">Sarry</a></li>
+                        <li><a href="#">Secky</a></li>
+                        <li><a href="#">Siff</a></li>
+                        <li><a href="#">Silly</a></li>
+                        <li><a href="#">Sozarking</a></li>
+                        <li><a href="#">Sryan</a></li>
+                    </ul>
+                </li>
+                <li id="t"><a name="t" class="title">t</a>
+                    <ul>
+                        <li><a href="#">Talista</a></li>
+                        <li><a href="#">Tathy</a></li>
+                        <li><a href="#">Thris</a></li>
+                        <li><a href="#">Tinderella</a></li>
+                        <li><a href="#">Torky</a></li>
+                        <li><a href="#">Typher</a></li>
+                    </ul>
+                </li>
+                <li id="u"><a name="u" class="title">u</a>
+                    <ul>
+                        <li><a href="#">Uamien</a></li>
+                        <li><a href="#">Uanny</a></li>
+                        <li><a href="#">Uenver</a></li>
+                        <li><a href="#">Uevon</a></li>
+                        <li><a href="#">Uoug</a></li>
+                        <li><a href="#">Uustin</a></li>
+                    </ul>
+                </li>
+                <li id="v"><a name="v" class="title">v</a>
+                    <ul>
+                        <li><a href="#">Varry</a></li>
+                        <li><a href="#">Vecky</a></li>
+                        <li><a href="#">Viff</a></li>
+                        <li><a href="#">Villy</a></li>
+                        <li><a href="#">Vozarking</a></li>
+                        <li><a href="#">Vryan</a></li>
+                    </ul>
+                </li>
+                <li id="w"><a name="w" class="title">w</a>
+                    <ul>
+                        <li><a href="#">Walista</a></li>
+                        <li><a href="#">Wathy</a></li>
+                        <li><a href="#">Whris</a></li>
+                        <li><a href="#">Winderella</a></li>
+                        <li><a href="#">Worky</a></li>
+                        <li><a href="#">Wypher</a></li>
+                    </ul>
+                </li>
+                <li id="x"><a name="x" class="title">x</a>
+                    <ul>
+                        <li><a href="#">Xamien</a></li>
+                        <li><a href="#">Xanny</a></li>
+                        <li><a href="#">Xenver</a></li>
+                        <li><a href="#">Xevon</a></li>
+                        <li><a href="#">Xoug</a></li>
+                        <li><a href="#">Xustin</a></li>
+                    </ul>
+                </li>
+                <li id="y"><a name="y" class="title">y</a>
+                    <ul>
+                        <li><a href="#">Yamien</a></li>
+                        <li><a href="#">Yanny</a></li>
+                        <li><a href="#">Yenver</a></li>
+                        <li><a href="#">Yevon</a></li>
+                        <li><a href="#">Youg</a></li>
+                        <li><a href="#">Yustin</a></li>
+                    </ul>
+                </li>
+                <li id="z"><a name="z" class="title">z</a>
+                    <ul>
+                        <li><a href="#">Zamien</a></li>
+                        <li><a href="#">Zanny</a></li>
+                        <li><a href="#">Zenver</a></li>
+                        <li><a href="#">Zevon</a></li>
+                        <li><a href="#">Zoug</a></li>
+                        <li><a href="#">Zustin</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="search-result">
+            <ul></ul>
+        </div>
+    </div>
+    <script>
+    $('.div-select').on('click',function(){
+        $('.tongxunlu').addClass('tongxunlu-show');
+        $('#slider').sliderNav();
+        scroll1 = loaded();
+    });
+    $('.back-btn').on('click',function(){
+        $('.tongxunlu').removeClass('tongxunlu-show');
+    });
+    $('#search_input').on('focus', function () {
+        var $weuiSearchBar = $('#search_bar');
+        $weuiSearchBar.addClass('weui_search_focusing');
+
+        $('.search-result').addClass('search-result-show');
+
+    }).on('blur', function () {
+        var $weuiSearchBar = $('#search_bar');
+        $weuiSearchBar.removeClass('weui_search_focusing');
+        if ($(this).val()) {
+            $('#search_text').hide();
+            $('.search-result').addClass('search-result-show');
+        } else {
+            $('#search_text').show();
+            $('.search-result').removeClass('search-result-show');
+            $('.search-result>ul').empty();
+        }
+    }).on('input', function () {
+        var $searchShow = $("#search_show");
+        if ($(this).val()) {
+            $searchShow.show();
+            $('.search-result').addClass('search-result-show');
+            var searchResultScroll = loaded2();
+            var val = $(this).val();
+            var ulWrap = $('.search-result>ul');
+            ulWrap.empty();
+            $('#slider a[href="#"]').each(function(){
+                if($(this).text().indexOf(val)>=0){
+                    var li = $('<li><a href="#">'+$(this).text()+'</a></li>');
+                    ulWrap.append(li);  
+                    li.on('click',function(){
+                        console.log(this);
+                    });
+                }
+            });
+            searchResultScroll.refresh();
+        } else {
+            $searchShow.hide();
+            $('.search-result').removeClass('search-result-show');
+            $('.search-result>ul').empty();
+        }
+    });
+    $('#search_cancel').on('touchend' , function () {
+        $("#search_show").hide();
+        $('.search-result').removeClass('search-result-show');
+        $('.search-result>ul').empty();
+        $('#search_input').val('');
+    })
+    $('#search_clear').on('touchend', function () {
+        $("#search_show").hide();
+        $('.search-result').removeClass('search-result-show');
+        $('.search-result>ul').empty();
+        $('#search_input').val('');
+    });
+
+    $.fn.sliderNav = function(options) {
+        var defaults = { items: ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"], debug: false, height: null, arrows: true};
+        var opts = $.extend(defaults, options); var o = $.meta ? $.extend({}, opts, $$.data()) : opts; var slider = $(this); $(slider).addClass('slider');
+
+        $('.slider-content li:first', slider).addClass('selected');
+        $(slider).after('<div class="slider-nav"><ul></ul></div>');
+        for(var i in o.items) 
+            $('.slider-nav ul').append("<li><a alt='#"+o.items[i]+"'>"+o.items[i]+"</a></li>");
+            
+        var height = $('.slider-nav', slider).height();
+
+        if(o.height) height = o.height;
+        //$('.slider-nav', slider).css('height',$(window).height()-$('#search_bar').outerHeight());
+        $('.slider-nav').css('height',$(window).height()-44);
+
+        if(o.debug) $(slider).append('<div id="debug">Scroll Offset: <span>0</span></div>');
+
+        $('.slider-nav a').click(function(event){
+            var target = $(this).attr('alt');
+            var cOffset = $('.slider-content', slider).offset().top;
+            var tOffset = $('.slider-content '+target, slider).offset().top;
+            var pScroll = (tOffset - cOffset-$('body').scrollTop());
+            //$('body').stop().animate({'scrollTop': pScroll + 'px'});
+            scroll1.scrollToElement($('.slider-content '+target)[0],500);
+        });
+    };
+</script>
+</body>
+</html>
